@@ -7,9 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.OleDb;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 using TaskManagment.classes;
+using Google.Apis.Auth.OAuth2;
+using Google.Apis.Gmail.v1;
+using Google.Apis.Gmail.v1.Data;
+using Google.Apis.Services;
 
 namespace TaskManagment
 {
@@ -24,8 +26,8 @@ namespace TaskManagment
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            string query = "SELECT * FROM [user] WHERE username = '" + usernameBox.Text +"' AND password = '"+ passwordBox.Text + "'";
-            if(dbHandler.IsExist(query))
+            string query = "SELECT * FROM [user] WHERE username = '" + usernameBox.Text + "' AND password = '" + passwordBox.Text + "'";
+            if (dbHandler.IsExist(query))
             {
                 MessageBox.Show("success");
             }
@@ -34,5 +36,15 @@ namespace TaskManagment
                 MessageBox.Show("incorrect username or password");
             }
         }
+
+        private void signUpButton_Click(object sender, EventArgs e)
+        {
+            string query = "INSERT INTO [user] ([username],[password]) VALUES ('" + usernameBox.Text + "','" + passwordBox.Text + "')";
+            //dbHandler.UpdateDB(query);
+            GmailEmailSender.SendEmailAsync("abramovichido@gmail.com", "try", "53");
+            MessageBox.Show("added successfully");
+        }
+
+        
     }
 }
