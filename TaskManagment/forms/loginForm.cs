@@ -12,6 +12,7 @@ using Google.Apis.Auth.OAuth2;
 using Google.Apis.Gmail.v1;
 using Google.Apis.Gmail.v1.Data;
 using Google.Apis.Services;
+using TaskManagment.forms;
 
 namespace TaskManagment
 {
@@ -30,6 +31,9 @@ namespace TaskManagment
             if (dbHandler.IsExist(query))
             {
                 MessageBox.Show("success");
+                this.Hide();
+                template t = new template(usernameBox.Text);
+                t.Show();
             }
             else
             {
@@ -40,8 +44,8 @@ namespace TaskManagment
         private void signUpButton_Click(object sender, EventArgs e)
         {
             string query = "INSERT INTO [user] ([username],[password]) VALUES ('" + usernameBox.Text + "','" + passwordBox.Text + "')";
-            //dbHandler.UpdateDB(query);
-            GmailEmailSender.SendEmailAsync("abramovichido@gmail.com", "try", "53");
+            dbHandler.UpdateDB(query);
+            //GmailEmailSender.SendEmailAsync("abramovichido@gmail.com", "try", "53");
             MessageBox.Show("added successfully");
         }
 
