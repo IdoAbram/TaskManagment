@@ -29,13 +29,30 @@ namespace TaskManagment.forms
         private void signoutButton_Click(object sender, EventArgs e)
         {
             this.OnSignOutClicked();
-            loginForm login = new loginForm();
-            login.ShowDialog();
+            new loginForm().ShowDialog();
         }
 
         protected virtual void OnSignOutClicked()
         {
             SignOutClicked?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void HomePage_Click(object sender, EventArgs e)
+        {
+            OnSignOutClicked();
+            new homePage(username).ShowDialog();
+        }
+
+        private void MyLists_Click(object sender, EventArgs e)
+        {
+            OnSignOutClicked();
+            new listPage(username).ShowDialog();
+        }
+
+        private void myGroup_Click(object sender, EventArgs e)
+        {
+            OnSignOutClicked();
+            new groupPage(username).ShowDialog();
         }
     }
 }

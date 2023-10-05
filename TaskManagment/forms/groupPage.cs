@@ -11,10 +11,10 @@ using TaskManagment.design;
 
 namespace TaskManagment.forms
 {
-    public partial class homePage : Form
+    public partial class groupPage : Form
     {
         string username;
-        public homePage(string username)
+        public groupPage(string username)
         {
             InitializeComponent();
             this.username = username;

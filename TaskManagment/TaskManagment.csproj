@@ -85,11 +85,23 @@
     <Compile Include="design\templatePanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="forms\groupPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\groupPage.Designer.cs">
+      <DependentUpon>groupPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\homePage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\homePage.Designer.cs">
       <DependentUpon>homePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\listPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\listPage.Designer.cs">
+      <DependentUpon>listPage.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\loginForm.cs">
       <SubType>Form</SubType>
@@ -105,8 +117,14 @@
     </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="forms\groupPage.resx">
+      <DependentUpon>groupPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\homePage.resx">
       <DependentUpon>homePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\listPage.resx">
+      <DependentUpon>listPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>

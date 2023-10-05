@@ -33,11 +33,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.signoutButton = new TaskManagment.design.RoundedButton();
             this.myGroup = new System.Windows.Forms.Button();
             this.MyLists = new System.Windows.Forms.Button();
             this.HomePage = new System.Windows.Forms.Button();
             this.usernameLabel = new System.Windows.Forms.Label();
-            this.signoutButton = new TaskManagment.design.RoundedButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -90,56 +90,6 @@
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
             // 
-            // myGroup
-            // 
-            this.myGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.myGroup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
-            this.myGroup.Font = new System.Drawing.Font("ADAM.CG PRO", 13.8F, System.Drawing.FontStyle.Italic);
-            this.myGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
-            this.myGroup.Location = new System.Drawing.Point(3, 302);
-            this.myGroup.Name = "myGroup";
-            this.myGroup.Size = new System.Drawing.Size(369, 63);
-            this.myGroup.TabIndex = 8;
-            this.myGroup.Text = "my Group";
-            this.myGroup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.myGroup.UseVisualStyleBackColor = false;
-            // 
-            // MyLists
-            // 
-            this.MyLists.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
-            this.MyLists.Font = new System.Drawing.Font("ADAM.CG PRO", 13.8F, System.Drawing.FontStyle.Italic);
-            this.MyLists.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
-            this.MyLists.Location = new System.Drawing.Point(0, 233);
-            this.MyLists.Name = "MyLists";
-            this.MyLists.Size = new System.Drawing.Size(372, 63);
-            this.MyLists.TabIndex = 8;
-            this.MyLists.Text = "My Lists";
-            this.MyLists.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.MyLists.UseVisualStyleBackColor = false;
-            // 
-            // HomePage
-            // 
-            this.HomePage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
-            this.HomePage.Font = new System.Drawing.Font("ADAM.CG PRO", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HomePage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
-            this.HomePage.Location = new System.Drawing.Point(0, 164);
-            this.HomePage.Name = "HomePage";
-            this.HomePage.Size = new System.Drawing.Size(372, 63);
-            this.HomePage.TabIndex = 7;
-            this.HomePage.Text = "HomePage";
-            this.HomePage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.HomePage.UseVisualStyleBackColor = false;
-            // 
-            // usernameLabel
-            // 
-            this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Font = new System.Drawing.Font("Monotype Corsiva", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameLabel.Location = new System.Drawing.Point(13, 34);
-            this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(84, 40);
-            this.usernameLabel.TabIndex = 0;
-            this.usernameLabel.Text = "Hello";
-            // 
             // signoutButton
             // 
             this.signoutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
@@ -156,6 +106,59 @@
             this.signoutButton.Text = "signout";
             this.signoutButton.UseVisualStyleBackColor = false;
             this.signoutButton.Click += new System.EventHandler(this.signoutButton_Click);
+            // 
+            // myGroup
+            // 
+            this.myGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.myGroup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
+            this.myGroup.Font = new System.Drawing.Font("ADAM.CG PRO", 13.8F, System.Drawing.FontStyle.Italic);
+            this.myGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
+            this.myGroup.Location = new System.Drawing.Point(3, 302);
+            this.myGroup.Name = "myGroup";
+            this.myGroup.Size = new System.Drawing.Size(369, 63);
+            this.myGroup.TabIndex = 8;
+            this.myGroup.Text = "my Group";
+            this.myGroup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.myGroup.UseVisualStyleBackColor = false;
+            this.myGroup.Click += new System.EventHandler(this.myGroup_Click);
+            // 
+            // MyLists
+            // 
+            this.MyLists.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
+            this.MyLists.Font = new System.Drawing.Font("ADAM.CG PRO", 13.8F, System.Drawing.FontStyle.Italic);
+            this.MyLists.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
+            this.MyLists.Location = new System.Drawing.Point(0, 233);
+            this.MyLists.Name = "MyLists";
+            this.MyLists.Size = new System.Drawing.Size(372, 63);
+            this.MyLists.TabIndex = 8;
+            this.MyLists.Text = "My Lists";
+            this.MyLists.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.MyLists.UseVisualStyleBackColor = false;
+            this.MyLists.Click += new System.EventHandler(this.MyLists_Click);
+            // 
+            // HomePage
+            // 
+            this.HomePage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
+            this.HomePage.Font = new System.Drawing.Font("ADAM.CG PRO", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HomePage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
+            this.HomePage.Location = new System.Drawing.Point(0, 164);
+            this.HomePage.Name = "HomePage";
+            this.HomePage.Size = new System.Drawing.Size(372, 63);
+            this.HomePage.TabIndex = 7;
+            this.HomePage.Text = "HomePage";
+            this.HomePage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.HomePage.UseVisualStyleBackColor = false;
+            this.HomePage.Click += new System.EventHandler(this.HomePage_Click);
+            // 
+            // usernameLabel
+            // 
+            this.usernameLabel.AutoSize = true;
+            this.usernameLabel.Font = new System.Drawing.Font("Monotype Corsiva", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameLabel.Location = new System.Drawing.Point(13, 34);
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(84, 40);
+            this.usernameLabel.TabIndex = 0;
+            this.usernameLabel.Text = "Hello";
             // 
             // template
             // 
