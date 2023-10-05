@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(template));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.signoutButton = new TaskManagment.design.RoundedButton();
             this.myGroup = new System.Windows.Forms.Button();
             this.MyLists = new System.Windows.Forms.Button();
             this.HomePage = new System.Windows.Forms.Button();
             this.usernameLabel = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.signoutButton = new TaskManagment.design.RoundedButton();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -59,6 +59,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(372, 892);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Linen;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(9, 312);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(120, 44);
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
             // 
             // pictureBox3
             // 
@@ -79,21 +89,6 @@
             this.pictureBox2.Size = new System.Drawing.Size(120, 44);
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
-            // 
-            // signoutButton
-            // 
-            this.signoutButton.BackColor = System.Drawing.Color.Linen;
-            this.signoutButton.CornerRadius = 30;
-            this.signoutButton.FlatAppearance.BorderSize = 0;
-            this.signoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.signoutButton.Font = new System.Drawing.Font("Monotype Corsiva", 22.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signoutButton.Location = new System.Drawing.Point(38, 662);
-            this.signoutButton.Name = "signoutButton";
-            this.signoutButton.Padding = new System.Windows.Forms.Padding(5);
-            this.signoutButton.Size = new System.Drawing.Size(292, 154);
-            this.signoutButton.TabIndex = 6;
-            this.signoutButton.Text = "signout";
-            this.signoutButton.UseVisualStyleBackColor = false;
             // 
             // myGroup
             // 
@@ -142,15 +137,21 @@
             this.usernameLabel.TabIndex = 0;
             this.usernameLabel.Text = "Hello";
             // 
-            // pictureBox1
+            // signoutButton
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Linen;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(9, 312);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(120, 44);
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
+            this.signoutButton.BackColor = System.Drawing.Color.Linen;
+            this.signoutButton.CornerRadius = 30;
+            this.signoutButton.FlatAppearance.BorderSize = 0;
+            this.signoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.signoutButton.Font = new System.Drawing.Font("Monotype Corsiva", 22.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signoutButton.Location = new System.Drawing.Point(38, 662);
+            this.signoutButton.Name = "signoutButton";
+            this.signoutButton.Padding = new System.Windows.Forms.Padding(5);
+            this.signoutButton.Size = new System.Drawing.Size(292, 154);
+            this.signoutButton.TabIndex = 6;
+            this.signoutButton.Text = "signout";
+            this.signoutButton.UseVisualStyleBackColor = false;
+            this.signoutButton.Click += new System.EventHandler(this.signoutButton_Click);
             // 
             // template
             // 
@@ -164,9 +165,9 @@
             this.Text = "template";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

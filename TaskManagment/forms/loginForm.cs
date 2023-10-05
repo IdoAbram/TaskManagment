@@ -30,9 +30,8 @@ namespace TaskManagment
             string query = "SELECT * FROM [user] WHERE username = '" + usernameBox.Text + "' AND password = '" + passwordBox.Text + "'";
             if (dbHandler.IsExist(query))
             {
-                MessageBox.Show("success");
                 this.Hide();
-                template t = new template(usernameBox.Text);
+                homePage t = new homePage(usernameBox.Text);
                 t.Show();
             }
             else
