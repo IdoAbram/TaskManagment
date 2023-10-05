@@ -54,6 +54,7 @@ namespace TaskManagment
             // 
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("Monotype Corsiva", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
             this.title.Location = new System.Drawing.Point(97, 9);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(276, 56);
@@ -62,7 +63,7 @@ namespace TaskManagment
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Bisque;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.signUpButton);
             this.panel1.Controls.Add(this.pictureBox2);
@@ -74,6 +75,7 @@ namespace TaskManagment
             this.panel1.Controls.Add(this.usernameBox);
             this.panel1.Controls.Add(this.loginLabel);
             this.panel1.CornerRadius = 30;
+            this.panel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.panel1.Location = new System.Drawing.Point(63, 68);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(368, 457);
@@ -92,12 +94,13 @@ namespace TaskManagment
             // 
             // signUpButton
             // 
-            this.signUpButton.BackColor = System.Drawing.Color.Moccasin;
+            this.signUpButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(199)))), ((int)(((byte)(215)))));
             this.signUpButton.CornerRadius = 30;
             this.signUpButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.signUpButton.FlatAppearance.BorderSize = 0;
             this.signUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signUpButton.Font = new System.Drawing.Font("Monotype Corsiva", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signUpButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
             this.signUpButton.Location = new System.Drawing.Point(0, 401);
             this.signUpButton.Name = "signUpButton";
             this.signUpButton.Padding = new System.Windows.Forms.Padding(5);
@@ -127,11 +130,12 @@ namespace TaskManagment
             // 
             // loginButton
             // 
-            this.loginButton.BackColor = System.Drawing.SystemColors.Info;
+            this.loginButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(199)))), ((int)(((byte)(215)))));
             this.loginButton.CornerRadius = 30;
             this.loginButton.FlatAppearance.BorderSize = 0;
             this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginButton.Font = new System.Drawing.Font("Monotype Corsiva", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
             this.loginButton.Location = new System.Drawing.Point(95, 258);
             this.loginButton.Name = "loginButton";
             this.loginButton.Padding = new System.Windows.Forms.Padding(5);
@@ -167,7 +171,8 @@ namespace TaskManagment
             // 
             // passwordBox
             // 
-            this.passwordBox.BackColor = System.Drawing.SystemColors.Info;
+            this.passwordBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(199)))), ((int)(((byte)(215)))));
+            this.passwordBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.passwordBox.Location = new System.Drawing.Point(51, 197);
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(245, 22);
@@ -175,8 +180,9 @@ namespace TaskManagment
             // 
             // usernameBox
             // 
-            this.usernameBox.BackColor = System.Drawing.SystemColors.Info;
-            this.usernameBox.Location = new System.Drawing.Point(51, 143);
+            this.usernameBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(199)))), ((int)(((byte)(215)))));
+            this.usernameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.usernameBox.Location = new System.Drawing.Point(52, 143);
             this.usernameBox.Name = "usernameBox";
             this.usernameBox.Size = new System.Drawing.Size(245, 22);
             this.usernameBox.TabIndex = 1;
@@ -185,6 +191,7 @@ namespace TaskManagment
             // 
             this.loginLabel.AutoSize = true;
             this.loginLabel.Font = new System.Drawing.Font("Monotype Corsiva", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
             this.loginLabel.Location = new System.Drawing.Point(116, 50);
             this.loginLabel.Name = "loginLabel";
             this.loginLabel.Size = new System.Drawing.Size(111, 56);
@@ -197,7 +204,7 @@ namespace TaskManagment
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.BackColor = System.Drawing.Color.Linen;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(219)))), ((int)(((byte)(215)))));
             this.ClientSize = new System.Drawing.Size(490, 556);
             this.ControlBox = false;
             this.Controls.Add(this.title);

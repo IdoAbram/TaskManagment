@@ -82,6 +82,9 @@
     <Compile Include="design\myPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="design\templatePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="forms\homePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +123,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

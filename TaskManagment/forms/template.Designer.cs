@@ -46,7 +46,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Info;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(226)))), ((int)(((byte)(235)))));
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
@@ -57,14 +57,14 @@
             this.panel1.Controls.Add(this.usernameLabel);
             this.panel1.Location = new System.Drawing.Point(-1, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(372, 892);
+            this.panel1.Size = new System.Drawing.Size(372, 886);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Linen;
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(9, 312);
+            this.pictureBox1.Location = new System.Drawing.Point(210, 312);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(120, 44);
             this.pictureBox1.TabIndex = 9;
@@ -72,9 +72,9 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Linen;
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.Location = new System.Drawing.Point(20, 174);
+            this.pictureBox3.Location = new System.Drawing.Point(210, 174);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(109, 44);
             this.pictureBox3.TabIndex = 10;
@@ -82,9 +82,9 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Linen;
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.Location = new System.Drawing.Point(9, 242);
+            this.pictureBox2.Location = new System.Drawing.Point(210, 243);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(120, 44);
             this.pictureBox2.TabIndex = 10;
@@ -93,38 +93,41 @@
             // myGroup
             // 
             this.myGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.myGroup.BackColor = System.Drawing.Color.Linen;
-            this.myGroup.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.myGroup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
+            this.myGroup.Font = new System.Drawing.Font("ADAM.CG PRO", 13.8F, System.Drawing.FontStyle.Italic);
+            this.myGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
             this.myGroup.Location = new System.Drawing.Point(3, 302);
             this.myGroup.Name = "myGroup";
             this.myGroup.Size = new System.Drawing.Size(369, 63);
             this.myGroup.TabIndex = 8;
-            this.myGroup.Text = "myGroup";
-            this.myGroup.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.myGroup.Text = "my Group";
+            this.myGroup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.myGroup.UseVisualStyleBackColor = false;
             // 
             // MyLists
             // 
-            this.MyLists.BackColor = System.Drawing.Color.Linen;
-            this.MyLists.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MyLists.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
+            this.MyLists.Font = new System.Drawing.Font("ADAM.CG PRO", 13.8F, System.Drawing.FontStyle.Italic);
+            this.MyLists.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
             this.MyLists.Location = new System.Drawing.Point(0, 233);
             this.MyLists.Name = "MyLists";
             this.MyLists.Size = new System.Drawing.Size(372, 63);
             this.MyLists.TabIndex = 8;
-            this.MyLists.Text = "MyLists";
-            this.MyLists.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.MyLists.Text = "My Lists";
+            this.MyLists.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.MyLists.UseVisualStyleBackColor = false;
             // 
             // HomePage
             // 
-            this.HomePage.BackColor = System.Drawing.Color.Linen;
-            this.HomePage.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HomePage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
+            this.HomePage.Font = new System.Drawing.Font("ADAM.CG PRO", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HomePage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
             this.HomePage.Location = new System.Drawing.Point(0, 164);
             this.HomePage.Name = "HomePage";
             this.HomePage.Size = new System.Drawing.Size(372, 63);
             this.HomePage.TabIndex = 7;
             this.HomePage.Text = "HomePage";
-            this.HomePage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.HomePage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.HomePage.UseVisualStyleBackColor = false;
             // 
             // usernameLabel
@@ -139,11 +142,12 @@
             // 
             // signoutButton
             // 
-            this.signoutButton.BackColor = System.Drawing.Color.Linen;
+            this.signoutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
             this.signoutButton.CornerRadius = 30;
             this.signoutButton.FlatAppearance.BorderSize = 0;
             this.signoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signoutButton.Font = new System.Drawing.Font("Monotype Corsiva", 22.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signoutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
             this.signoutButton.Location = new System.Drawing.Point(38, 662);
             this.signoutButton.Name = "signoutButton";
             this.signoutButton.Padding = new System.Windows.Forms.Padding(5);
