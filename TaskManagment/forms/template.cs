@@ -46,7 +46,7 @@ namespace TaskManagment.forms
         private void MyLists_Click(object sender, EventArgs e)
         {
             OnSignOutClicked();
-            new listPage(username).ShowDialog();
+            new listsForm(username).ShowDialog();
         }
 
         private void myGroup_Click(object sender, EventArgs e)

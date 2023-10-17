@@ -47,7 +47,5 @@ namespace TaskManagment
             //GmailEmailSender.SendEmailAsync("abramovichido@gmail.com", "try", "53");
             MessageBox.Show("added successfully");
         }
-
-        
     }
 }

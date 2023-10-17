@@ -75,7 +75,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classes\DB.cs" />
-    <Compile Include="classes\emailAPI.cs" />
     <Compile Include="design\myButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -103,6 +102,12 @@
     <Compile Include="forms\listPage.Designer.cs">
       <DependentUpon>listPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\listsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\listsForm.Designer.cs">
+      <DependentUpon>listsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\loginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\listPage.resx">
       <DependentUpon>listPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\listsForm.resx">
+      <DependentUpon>listsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>
@@ -157,6 +165,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

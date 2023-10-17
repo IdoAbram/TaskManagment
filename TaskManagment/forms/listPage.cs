@@ -14,7 +14,7 @@ namespace TaskManagment.forms
     public partial class listPage : Form
     {
         string username;
-        public listPage(string username)
+        public listPage(string username,string query)
         {
             InitializeComponent();
             this.username = username;
