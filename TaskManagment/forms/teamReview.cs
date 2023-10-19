@@ -7,18 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TaskManagment.design;
 
 namespace TaskManagment.forms
 {
-    public partial class groupPage : Form
+    public partial class teamReview : Form
     {
-        string username;
-        public groupPage(string username)
+        public teamReview()
         {
             InitializeComponent();
-            this.username = username;
-            this.Controls.Add(new templatePanel(username));
         }
     }
 }

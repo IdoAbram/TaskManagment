@@ -10,7 +10,7 @@ namespace TaskManagment.design
     {
         DB dbHandler;
 
-        public myList(string query, Action<string> buttonFunc)
+        public myList(string query, string table, Action<string,string> buttonFunc)
         {
             dbHandler = DB.Instance;
             List<List<string>> dataFromDatabase = dbHandler.Query(query);
@@ -51,7 +51,7 @@ namespace TaskManagment.design
 
                 button.Click += (sender, e) =>
                 {
-                    buttonFunc.Invoke(button.Text);
+                    buttonFunc.Invoke(button.Text, table);
                 };
 
                 button.Parent = linePanel;

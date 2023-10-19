@@ -30,13 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(template));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.report = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.signoutButton = new TaskManagment.design.RoundedButton();
-            this.myGroup = new System.Windows.Forms.Button();
-            this.MyLists = new System.Windows.Forms.Button();
-            this.HomePage = new System.Windows.Forms.Button();
+            this.team = new System.Windows.Forms.Button();
+            this.task = new System.Windows.Forms.Button();
+            this.project = new System.Windows.Forms.Button();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -47,18 +48,33 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(226)))), ((int)(((byte)(235)))));
+            this.panel1.Controls.Add(this.report);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.signoutButton);
-            this.panel1.Controls.Add(this.myGroup);
-            this.panel1.Controls.Add(this.MyLists);
-            this.panel1.Controls.Add(this.HomePage);
+            this.panel1.Controls.Add(this.team);
+            this.panel1.Controls.Add(this.task);
+            this.panel1.Controls.Add(this.project);
             this.panel1.Controls.Add(this.usernameLabel);
             this.panel1.Location = new System.Drawing.Point(-1, -2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(372, 1000);
             this.panel1.TabIndex = 0;
+            // 
+            // report
+            // 
+            this.report.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
+            this.report.Font = new System.Drawing.Font("ADAM.CG PRO", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.report.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
+            this.report.Location = new System.Drawing.Point(0, 371);
+            this.report.Name = "report";
+            this.report.Size = new System.Drawing.Size(372, 63);
+            this.report.TabIndex = 11;
+            this.report.Text = "Reports";
+            this.report.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.report.UseVisualStyleBackColor = false;
+            this.report.Click += new System.EventHandler(this.report_Click);
             // 
             // pictureBox1
             // 
@@ -107,48 +123,48 @@
             this.signoutButton.UseVisualStyleBackColor = false;
             this.signoutButton.Click += new System.EventHandler(this.signoutButton_Click);
             // 
-            // myGroup
+            // team
             // 
-            this.myGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.myGroup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
-            this.myGroup.Font = new System.Drawing.Font("ADAM.CG PRO", 13.8F, System.Drawing.FontStyle.Italic);
-            this.myGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
-            this.myGroup.Location = new System.Drawing.Point(3, 302);
-            this.myGroup.Name = "myGroup";
-            this.myGroup.Size = new System.Drawing.Size(369, 63);
-            this.myGroup.TabIndex = 8;
-            this.myGroup.Text = "my Group";
-            this.myGroup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.myGroup.UseVisualStyleBackColor = false;
-            this.myGroup.Click += new System.EventHandler(this.myGroup_Click);
+            this.team.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.team.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
+            this.team.Font = new System.Drawing.Font("ADAM.CG PRO", 13.8F, System.Drawing.FontStyle.Italic);
+            this.team.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
+            this.team.Location = new System.Drawing.Point(3, 302);
+            this.team.Name = "team";
+            this.team.Size = new System.Drawing.Size(369, 63);
+            this.team.TabIndex = 8;
+            this.team.Text = "Team";
+            this.team.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.team.UseVisualStyleBackColor = false;
+            this.team.Click += new System.EventHandler(this.team_Click);
             // 
-            // MyLists
+            // task
             // 
-            this.MyLists.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
-            this.MyLists.Font = new System.Drawing.Font("ADAM.CG PRO", 13.8F, System.Drawing.FontStyle.Italic);
-            this.MyLists.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
-            this.MyLists.Location = new System.Drawing.Point(0, 233);
-            this.MyLists.Name = "MyLists";
-            this.MyLists.Size = new System.Drawing.Size(372, 63);
-            this.MyLists.TabIndex = 8;
-            this.MyLists.Text = "My Lists";
-            this.MyLists.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.MyLists.UseVisualStyleBackColor = false;
-            this.MyLists.Click += new System.EventHandler(this.MyLists_Click);
+            this.task.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
+            this.task.Font = new System.Drawing.Font("ADAM.CG PRO", 13.8F, System.Drawing.FontStyle.Italic);
+            this.task.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
+            this.task.Location = new System.Drawing.Point(0, 233);
+            this.task.Name = "task";
+            this.task.Size = new System.Drawing.Size(372, 63);
+            this.task.TabIndex = 8;
+            this.task.Text = "Tasks";
+            this.task.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.task.UseVisualStyleBackColor = false;
+            this.task.Click += new System.EventHandler(this.task_Click);
             // 
-            // HomePage
+            // project
             // 
-            this.HomePage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
-            this.HomePage.Font = new System.Drawing.Font("ADAM.CG PRO", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HomePage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
-            this.HomePage.Location = new System.Drawing.Point(0, 164);
-            this.HomePage.Name = "HomePage";
-            this.HomePage.Size = new System.Drawing.Size(372, 63);
-            this.HomePage.TabIndex = 7;
-            this.HomePage.Text = "HomePage";
-            this.HomePage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.HomePage.UseVisualStyleBackColor = false;
-            this.HomePage.Click += new System.EventHandler(this.HomePage_Click);
+            this.project.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
+            this.project.Font = new System.Drawing.Font("ADAM.CG PRO", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.project.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
+            this.project.Location = new System.Drawing.Point(0, 164);
+            this.project.Name = "project";
+            this.project.Size = new System.Drawing.Size(372, 63);
+            this.project.TabIndex = 7;
+            this.project.Text = "Projects";
+            this.project.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.project.UseVisualStyleBackColor = false;
+            this.project.Click += new System.EventHandler(this.project_Click);
             // 
             // usernameLabel
             // 
@@ -184,11 +200,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label usernameLabel;
         private design.RoundedButton signoutButton;
-        private System.Windows.Forms.Button myGroup;
-        private System.Windows.Forms.Button MyLists;
-        private System.Windows.Forms.Button HomePage;
+        private System.Windows.Forms.Button team;
+        private System.Windows.Forms.Button task;
+        private System.Windows.Forms.Button project;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button report;
     }
 }

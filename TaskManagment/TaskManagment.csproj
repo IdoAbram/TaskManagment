@@ -74,7 +74,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="classes\DB.cs" />
+    <Compile Include="DB\DB.cs" />
+    <Compile Include="classes\Project.cs" />
+    <Compile Include="classes\Report.cs" />
+    <Compile Include="classes\myTask.cs" />
+    <Compile Include="classes\Team.cs" />
     <Compile Include="design\myButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -87,35 +91,47 @@
     <Compile Include="design\templatePanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="forms\groupPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\groupPage.Designer.cs">
-      <DependentUpon>groupPage.cs</DependentUpon>
-    </Compile>
     <Compile Include="forms\homePage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\homePage.Designer.cs">
       <DependentUpon>homePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\listPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\listPage.Designer.cs">
-      <DependentUpon>listPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\listsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\listsForm.Designer.cs">
-      <DependentUpon>listsForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="forms\loginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\loginForm.Designer.cs">
       <DependentUpon>loginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\projectReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\projectReview.Designer.cs">
+      <DependentUpon>projectReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\reportReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\reportReview.Designer.cs">
+      <DependentUpon>reportReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\signUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\signUpForm.Designer.cs">
+      <DependentUpon>signUpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\taskReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\taskReview.Designer.cs">
+      <DependentUpon>taskReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\teamReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\teamReview.Designer.cs">
+      <DependentUpon>teamReview.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\template.cs">
       <SubType>Form</SubType>
@@ -125,20 +141,17 @@
     </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="forms\groupPage.resx">
-      <DependentUpon>groupPage.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="forms\homePage.resx">
       <DependentUpon>homePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\listPage.resx">
-      <DependentUpon>listPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\listsForm.resx">
-      <DependentUpon>listsForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="forms\loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\projectReview.resx">
+      <DependentUpon>projectReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\signUpForm.resx">
+      <DependentUpon>signUpForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\template.resx">
       <DependentUpon>template.cs</DependentUpon>

@@ -41,9 +41,9 @@ namespace TaskManagment
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.loginButton = new TaskManagment.design.RoundedButton();
             this.passwordLabel = new System.Windows.Forms.Label();
-            this.usernameLabel = new System.Windows.Forms.Label();
+            this.idLabel = new System.Windows.Forms.Label();
             this.passwordBox = new System.Windows.Forms.TextBox();
-            this.usernameBox = new System.Windows.Forms.TextBox();
+            this.idBox = new System.Windows.Forms.TextBox();
             this.loginLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -70,9 +70,9 @@ namespace TaskManagment
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.loginButton);
             this.panel1.Controls.Add(this.passwordLabel);
-            this.panel1.Controls.Add(this.usernameLabel);
+            this.panel1.Controls.Add(this.idLabel);
             this.panel1.Controls.Add(this.passwordBox);
-            this.panel1.Controls.Add(this.usernameBox);
+            this.panel1.Controls.Add(this.idBox);
             this.panel1.Controls.Add(this.loginLabel);
             this.panel1.CornerRadius = 30;
             this.panel1.Cursor = System.Windows.Forms.Cursors.Default;
@@ -157,35 +157,36 @@ namespace TaskManagment
             this.passwordLabel.TabIndex = 4;
             this.passwordLabel.Text = "password";
             // 
-            // usernameLabel
+            // idLabel
             // 
-            this.usernameLabel.AutoSize = true;
-            this.usernameLabel.BackColor = System.Drawing.Color.Transparent;
-            this.usernameLabel.Font = new System.Drawing.Font("Monotype Corsiva", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameLabel.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.usernameLabel.Location = new System.Drawing.Point(47, 120);
-            this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(66, 20);
-            this.usernameLabel.TabIndex = 3;
-            this.usernameLabel.Text = "username";
+            this.idLabel.AutoSize = true;
+            this.idLabel.BackColor = System.Drawing.Color.Transparent;
+            this.idLabel.Font = new System.Drawing.Font("Monotype Corsiva", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idLabel.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.idLabel.Location = new System.Drawing.Point(47, 120);
+            this.idLabel.Name = "idLabel";
+            this.idLabel.Size = new System.Drawing.Size(20, 20);
+            this.idLabel.TabIndex = 3;
+            this.idLabel.Text = "id";
             // 
             // passwordBox
             // 
             this.passwordBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(199)))), ((int)(((byte)(215)))));
             this.passwordBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.passwordBox.Font = new System.Drawing.Font("MS Outlook", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.passwordBox.Location = new System.Drawing.Point(51, 197);
             this.passwordBox.Name = "passwordBox";
-            this.passwordBox.Size = new System.Drawing.Size(245, 22);
+            this.passwordBox.Size = new System.Drawing.Size(245, 21);
             this.passwordBox.TabIndex = 2;
             // 
-            // usernameBox
+            // idBox
             // 
-            this.usernameBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(199)))), ((int)(((byte)(215)))));
-            this.usernameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.usernameBox.Location = new System.Drawing.Point(52, 143);
-            this.usernameBox.Name = "usernameBox";
-            this.usernameBox.Size = new System.Drawing.Size(245, 22);
-            this.usernameBox.TabIndex = 1;
+            this.idBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(199)))), ((int)(((byte)(215)))));
+            this.idBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idBox.Location = new System.Drawing.Point(52, 143);
+            this.idBox.Name = "idBox";
+            this.idBox.Size = new System.Drawing.Size(245, 22);
+            this.idBox.TabIndex = 1;
             // 
             // loginLabel
             // 
@@ -226,9 +227,9 @@ namespace TaskManagment
         private design.RoundedPanel panel1;
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.Label loginLabel;
-        private System.Windows.Forms.Label usernameLabel;
+        private System.Windows.Forms.Label idLabel;
         private System.Windows.Forms.TextBox passwordBox;
-        private System.Windows.Forms.TextBox usernameBox;
+        private System.Windows.Forms.TextBox idBox;
         private design.RoundedButton loginButton;
         private System.Windows.Forms.Label passwordLabel;
         private PictureBox pictureBox1;
