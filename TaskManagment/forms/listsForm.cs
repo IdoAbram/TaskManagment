@@ -21,7 +21,8 @@ namespace TaskManagment.forms
             InitializeComponent();
             this.Controls.Add(new templatePanel(username));
             putTitle();
-            this.Controls.Add(new myList(query1, (taskListName) => {
+            this.Controls.Add(new myList(query1, (taskListName) =>
+            {
                 string query2 = "SELECT name FROM task WHERE user = '" + username + "' AND taskListName = '" + taskListName + "'";
                 listPage listPage = new listPage(username, query2, taskListName);
                 this.Hide();
@@ -39,6 +40,11 @@ namespace TaskManagment.forms
             label.Location = new Point(this.Width - label.PreferredWidth - 250, 40);
 
             this.Controls.Add(label);
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
