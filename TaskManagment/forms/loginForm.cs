@@ -27,12 +27,13 @@ namespace TaskManagment
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            string query = "SELECT * FROM [user] WHERE username = '" + usernameBox.Text + "' AND password = '" + passwordBox.Text + "'";
+            string query = "SELECT id FROM [user] WHERE id = '" + usernameBox.Text + "' AND password = '" + passwordBox.Text + "'";
             if (dbHandler.IsExist(query))
             {
                 this.Hide();
-                homePage t = new homePage(usernameBox.Text);
-                t.Show();
+                MessageBox.Show("ssss");
+                //homePage t = new homePage(usernameBox.Text);
+                //t.Show();
             }
             else
             {
