@@ -78,6 +78,9 @@
     <Compile Include="design\myButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="design\myList.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="design\myPanel.cs">
       <SubType>Component</SubType>
     </Compile>
