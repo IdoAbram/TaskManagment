@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaskManagment.forms;
 using TaskManagment.classes;
+using TaskManagement.Classes;
 
 namespace TaskManagment.forms
 {
@@ -23,7 +24,7 @@ namespace TaskManagment.forms
             InitializeComponent();
             this.id = id;
             string query = "SELECT name , fName FROM [user] WHERE id = '" + id + "'";
-            usernameLabel.Text = "hello " + string.Join(" ", dbHandler.Query(query).ToArray()[0]);
+            usernameLabel.Text = "Hello " + string.Join(" ", dbHandler.Query(query).ToArray()[0]);
 
             signoutButton.Click += (sender, e) =>
             {
@@ -55,7 +56,7 @@ namespace TaskManagment.forms
         private void task_Click(object sender, EventArgs e)
         {
             string query = @"
-                SELECT t2.id
+                SELECT t2.id, t2.description, t2.tId
                 FROM [user] u, [team] t1, [task] t2
                 WHERE u.id = t1.uid AND t1.id = t2.tid AND u.id = '" + id + "'";
             OnSignOutClicked();
@@ -80,6 +81,13 @@ namespace TaskManagment.forms
                 WHERE r.uid = '" + id + "'";
             OnSignOutClicked();
             new homePage(id, "My reports", query, "report").ShowDialog();
+        }
+
+        private void profileButton_Click(object sender, EventArgs e)
+        {
+            DB dbHandler = DB.Instance;
+            List<string> user = dbHandler.Query("SELECT * FROM [user] WHERE id = '" + id + "'").ToArray()[0];
+            new userReview(new User(user.ToArray()[0], user.ToArray()[1], user.ToArray()[2], user.ToArray()[3], user.ToArray()[4], user.ToArray()[5], double.Parse(user.ToArray()[6]))).Show();
         }
     }
 }

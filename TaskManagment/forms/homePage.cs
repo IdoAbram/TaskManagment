@@ -22,7 +22,7 @@ namespace TaskManagment.forms
         {
             InitializeComponent();
             this.Controls.Add(new templatePanel(id));
-            putTitle("My projects");
+            putTitle("My Projects");
             string query = @"
                 SELECT p.id
                 FROM [user] u, [team] t, [project] p
@@ -39,32 +39,40 @@ namespace TaskManagment.forms
             InitializeComponent();
             this.Controls.Add(new templatePanel(id));
             putTitle(title);
-            this.Controls.Add(new myList(query,table, (myId, currentTable) =>
+            if (table == "task")
             {
-                List<string> list = dbHandler.Query("SELECT * FROM " + currentTable + " WHERE id = '" + myId + "'").ToArray()[0];
-                switch (currentTable)
+                this.Controls.Add(new taskGrid("SELECT t1.id, t1.description, t1.pid, t1.tid, t1.status " +
+        "FROM [task] t1, [team] t2, [user] u " +
+        "WHERE u.id = '" + id + "' AND u.id = t2.uid AND t2.id = t1.tid"));
+            }
+            else if(table == "report")
+            {
+                taskGrid grid = new taskGrid("SELECT * FROM [report] WHERE uId = '" + id + "'");
+                grid.Width = 644;
+                grid.Location = new System.Drawing.Point(375, 150);
+                this.Controls.Add(grid);
+            }
+            else
+            {
+                this.Controls.Add(new myList(query, table, (myId, currentTable) =>
                 {
-                    case "project":
-                        new projectReview(new Project(list.ToArray()[0], list.ToArray()[1], list.ToArray()[2], double.Parse(list.ToArray()[3]), list.ToArray()[4])).Show();
-                        break;
+                    List<string> list = dbHandler.Query("SELECT * FROM " + currentTable + " WHERE id = '" + myId + "'").ToArray()[0];
+                    switch (currentTable)
+                    {
+                        case "project":
+                            new projectReview(new Project(list.ToArray()[0], list.ToArray()[1], list.ToArray()[2], double.Parse(list.ToArray()[3]), list.ToArray()[4])).Show();
+                            break;
 
-                    case "team":
-                        //new teamReview(new Team().Show();
-                        break;
+                        case "team":
+                            //new teamReview(new Team().Show();
+                            break;;
 
-                    case "task":
-                        new taskReview(new myTask(list.ToArray()[0], list.ToArray()[1], list.ToArray()[2], list.ToArray()[3])).Show();
-                        break;
-
-                    case "report":
-                        new reportReview(new Report(list.ToArray()[0], list.ToArray()[1], list.ToArray()[2], double.Parse(list.ToArray()[3]), list.ToArray()[4], list.ToArray()[5])).Show();
-                        break;
-
-                    default:
-                        MessageBox.Show("Class not recognized.");
-                        break;
-                }
-            }));
+                        default:
+                            MessageBox.Show("Class not recognized.");
+                            break;
+                    }
+                }));
+            }
         }
 
         private void putTitle(string title)
@@ -73,7 +81,7 @@ namespace TaskManagment.forms
             label.AutoSize = true;
             label.Text = title;
             label.Font = new System.Drawing.Font(label.Font.FontFamily, 36, System.Drawing.FontStyle.Regular);
-            label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
+            label.ForeColor = System.Drawing.Color.Black;
             label.Location = new Point(this.Width - label.PreferredWidth - 100, 40);
 
             this.Controls.Add(label);

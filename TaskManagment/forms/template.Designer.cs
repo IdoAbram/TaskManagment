@@ -34,11 +34,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.signoutButton = new TaskManagment.design.RoundedButton();
             this.team = new System.Windows.Forms.Button();
             this.task = new System.Windows.Forms.Button();
             this.project = new System.Windows.Forms.Button();
             this.usernameLabel = new System.Windows.Forms.Label();
+            this.profileButton = new TaskManagment.design.RoundedButton();
+            this.signoutButton = new TaskManagment.design.RoundedButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -47,7 +48,8 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(226)))), ((int)(((byte)(235)))));
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.profileButton);
             this.panel1.Controls.Add(this.report);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.pictureBox3);
@@ -64,9 +66,8 @@
             // 
             // report
             // 
-            this.report.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
+            this.report.BackColor = System.Drawing.Color.LightBlue;
             this.report.Font = new System.Drawing.Font("ADAM.CG PRO", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.report.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
             this.report.Location = new System.Drawing.Point(0, 371);
             this.report.Name = "report";
             this.report.Size = new System.Drawing.Size(372, 63);
@@ -78,7 +79,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
+            this.pictureBox1.BackColor = System.Drawing.Color.LightBlue;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.Location = new System.Drawing.Point(210, 312);
             this.pictureBox1.Name = "pictureBox1";
@@ -88,7 +89,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
+            this.pictureBox3.BackColor = System.Drawing.Color.LightBlue;
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.Location = new System.Drawing.Point(210, 174);
             this.pictureBox3.Name = "pictureBox3";
@@ -98,7 +99,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
+            this.pictureBox2.BackColor = System.Drawing.Color.LightBlue;
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.Location = new System.Drawing.Point(210, 243);
             this.pictureBox2.Name = "pictureBox2";
@@ -106,29 +107,11 @@
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
             // 
-            // signoutButton
-            // 
-            this.signoutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
-            this.signoutButton.CornerRadius = 30;
-            this.signoutButton.FlatAppearance.BorderSize = 0;
-            this.signoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.signoutButton.Font = new System.Drawing.Font("Monotype Corsiva", 22.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signoutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
-            this.signoutButton.Location = new System.Drawing.Point(38, 662);
-            this.signoutButton.Name = "signoutButton";
-            this.signoutButton.Padding = new System.Windows.Forms.Padding(5);
-            this.signoutButton.Size = new System.Drawing.Size(292, 154);
-            this.signoutButton.TabIndex = 6;
-            this.signoutButton.Text = "signout";
-            this.signoutButton.UseVisualStyleBackColor = false;
-            this.signoutButton.Click += new System.EventHandler(this.signoutButton_Click);
-            // 
             // team
             // 
             this.team.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.team.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
+            this.team.BackColor = System.Drawing.Color.LightBlue;
             this.team.Font = new System.Drawing.Font("ADAM.CG PRO", 13.8F, System.Drawing.FontStyle.Italic);
-            this.team.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
             this.team.Location = new System.Drawing.Point(3, 302);
             this.team.Name = "team";
             this.team.Size = new System.Drawing.Size(369, 63);
@@ -140,9 +123,8 @@
             // 
             // task
             // 
-            this.task.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
+            this.task.BackColor = System.Drawing.Color.LightBlue;
             this.task.Font = new System.Drawing.Font("ADAM.CG PRO", 13.8F, System.Drawing.FontStyle.Italic);
-            this.task.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
             this.task.Location = new System.Drawing.Point(0, 233);
             this.task.Name = "task";
             this.task.Size = new System.Drawing.Size(372, 63);
@@ -154,9 +136,8 @@
             // 
             // project
             // 
-            this.project.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
+            this.project.BackColor = System.Drawing.Color.LightBlue;
             this.project.Font = new System.Drawing.Font("ADAM.CG PRO", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.project.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
             this.project.Location = new System.Drawing.Point(0, 164);
             this.project.Name = "project";
             this.project.Size = new System.Drawing.Size(372, 63);
@@ -169,18 +150,51 @@
             // usernameLabel
             // 
             this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Font = new System.Drawing.Font("Monotype Corsiva", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameLabel.Font = new System.Drawing.Font("Arial Narrow", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameLabel.ForeColor = System.Drawing.Color.LightBlue;
             this.usernameLabel.Location = new System.Drawing.Point(13, 34);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(84, 40);
+            this.usernameLabel.Size = new System.Drawing.Size(86, 40);
             this.usernameLabel.TabIndex = 0;
             this.usernameLabel.Text = "Hello";
+            // 
+            // profileButton
+            // 
+            this.profileButton.BackColor = System.Drawing.Color.LightBlue;
+            this.profileButton.CornerRadius = 30;
+            this.profileButton.FlatAppearance.BorderSize = 0;
+            this.profileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.profileButton.Font = new System.Drawing.Font("ADAM.CG PRO", 13.8F, System.Drawing.FontStyle.Italic);
+            this.profileButton.Location = new System.Drawing.Point(62, 452);
+            this.profileButton.Name = "profileButton";
+            this.profileButton.Padding = new System.Windows.Forms.Padding(5);
+            this.profileButton.Size = new System.Drawing.Size(225, 70);
+            this.profileButton.TabIndex = 12;
+            this.profileButton.Text = "my profile";
+            this.profileButton.UseVisualStyleBackColor = false;
+            this.profileButton.Click += new System.EventHandler(this.profileButton_Click);
+            // 
+            // signoutButton
+            // 
+            this.signoutButton.BackColor = System.Drawing.Color.LightBlue;
+            this.signoutButton.CornerRadius = 30;
+            this.signoutButton.FlatAppearance.BorderSize = 0;
+            this.signoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.signoutButton.Font = new System.Drawing.Font("Arial Narrow", 22.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signoutButton.Location = new System.Drawing.Point(38, 755);
+            this.signoutButton.Name = "signoutButton";
+            this.signoutButton.Padding = new System.Windows.Forms.Padding(5);
+            this.signoutButton.Size = new System.Drawing.Size(281, 71);
+            this.signoutButton.TabIndex = 6;
+            this.signoutButton.Text = "signout";
+            this.signoutButton.UseVisualStyleBackColor = false;
+            this.signoutButton.Click += new System.EventHandler(this.signoutButton_Click);
             // 
             // template
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FloralWhite;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1375, 883);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
@@ -207,5 +221,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button report;
+        private design.RoundedButton profileButton;
     }
 }
