@@ -110,8 +110,10 @@ namespace TaskManagment.forms
             uncompletedTasksSeries.IsValueShownAsLabel = true;
 
             ///////////////////////////////////////////////status text
-            double taskPrecentage = completedTasks / (completedTasks + uncompletedTasks);
-            double budgetPrecentage = budgetused / (budgetused + budgetLeft);
+            double taskPrecentage = 0;
+            if (completedTasks + uncompletedTasks != 0) { taskPrecentage = completedTasks / (completedTasks + uncompletedTasks); }
+            double budgetPrecentage = 0;
+            if (budgetused + budgetLeft != 0) { budgetPrecentage = budgetused / (budgetused + budgetLeft); }
 
             double daysGoneBy = (DateTime.Today - StringToDate(project.StartDate)).Days;
             double allDays = (StringToDate(project.EndDate) - StringToDate(project.StartDate)).Days;
@@ -198,5 +200,9 @@ namespace TaskManagment.forms
             throw new ArgumentException("Invalid date format");
         }
 
+        private void projectTeam_Click(object sender, EventArgs e)
+        {
+            new teamReview(new Team(project.TeamId),project.Id).Show();
+        }
     }
 }

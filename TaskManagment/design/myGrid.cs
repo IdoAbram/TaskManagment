@@ -12,22 +12,22 @@ public class taskGrid : DataGridView
     DB dB = DB.Instance;
     public taskGrid(string query)
     {
+        this.BackgroundColor = Color.White;
+        this.Height = 500;
         this.query = query;
         InitializeComponents();
         LoadData();
         Button saveButton = new Button();
         saveButton.Text = "Save";
+        saveButton.BackColor = Color.LightBlue;
         saveButton.Click += SaveButton_Click; // Attach an event handler
         this.Controls.Add(saveButton);
-        saveButton.Width = 40;
+        saveButton.Width = 42;
     }
 
     private void InitializeComponents()
     {
         // Set up other properties of your DataGridView
-        this.Width = 543;
-        this.Height = 500;
-        this.Location = new System.Drawing.Point(400, 150);
         this.Anchor = AnchorStyles.Right;
         this.BackgroundColor = Color.WhiteSmoke;
     }

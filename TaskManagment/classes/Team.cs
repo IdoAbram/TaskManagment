@@ -8,11 +8,11 @@ namespace TaskManagement.Classes
 {
     public class Team
     {
-        public List<string> Users { get; set; }
+        public string teamId;
 
-        public Team()
+        public Team(string teamId)
         {
-            Users = new List<string>();
+            this.teamId = teamId;
         }
     }
 }

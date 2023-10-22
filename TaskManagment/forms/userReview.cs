@@ -38,11 +38,12 @@ namespace TaskManagment.forms
             jobDescriptionBox.Enabled = false;
             hourRateBox.Text = user.HourRate.ToString();
             hourRateBox.ReadOnly = true;
-            saveButton.Visible = false;
+            saveButton.Enabled = false;
         }
-        private void editButton_Click(object sender, EventArgs e)
+
+        private void editButton_Click_1(object sender, EventArgs e)
         {
-            saveButton.Visible = !saveButton.Visible;
+            saveButton.Enabled = !saveButton.Enabled;
             passwordBox.ReadOnly = !passwordBox.ReadOnly;
             companyBox.ReadOnly = companyBox.ReadOnly;
             nameBox.ReadOnly = !nameBox.ReadOnly;
@@ -59,6 +60,7 @@ namespace TaskManagment.forms
                 setUp();
             }
         }
+
         private void saveButton_Click_1(object sender, EventArgs e)
         {
             if (!jobDescriptionBox.Items.Contains(jobDescriptionBox.Text))
@@ -78,7 +80,7 @@ namespace TaskManagment.forms
                 user.FName = fNameBox.Text;
                 user.JobDescription = jobDescriptionBox.Text;
                 user.HourRate = double.Parse(hourRateBox.Text);
-                editButton_Click(sender, e);
+                editButton_Click_1(sender, e);
             }
         }
     }

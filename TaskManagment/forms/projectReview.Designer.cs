@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.title = new System.Windows.Forms.Label();
             this.roundedPanel1 = new TaskManagment.design.RoundedPanel();
+            this.statuslabel3 = new System.Windows.Forms.Label();
+            this.statuslabel1 = new System.Windows.Forms.Label();
+            this.statusLabel2 = new System.Windows.Forms.Label();
             this.projectTeam = new System.Windows.Forms.Button();
             this.descriptionStatusLabel = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
@@ -50,9 +53,6 @@
             this.eDate = new System.Windows.Forms.Label();
             this.budget = new System.Windows.Forms.Label();
             this.budgetBox = new System.Windows.Forms.TextBox();
-            this.statusLabel2 = new System.Windows.Forms.Label();
-            this.statuslabel1 = new System.Windows.Forms.Label();
-            this.statuslabel3 = new System.Windows.Forms.Label();
             this.roundedPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.taskChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.budgetChart)).BeginInit();
@@ -95,6 +95,36 @@
             this.roundedPanel1.Size = new System.Drawing.Size(1136, 703);
             this.roundedPanel1.TabIndex = 18;
             // 
+            // statuslabel3
+            // 
+            this.statuslabel3.AutoSize = true;
+            this.statuslabel3.Font = new System.Drawing.Font("Arial", 12F);
+            this.statuslabel3.Location = new System.Drawing.Point(661, 178);
+            this.statuslabel3.Name = "statuslabel3";
+            this.statuslabel3.Size = new System.Drawing.Size(115, 23);
+            this.statuslabel3.TabIndex = 25;
+            this.statuslabel3.Text = "statuslabel2";
+            // 
+            // statuslabel1
+            // 
+            this.statuslabel1.AutoSize = true;
+            this.statuslabel1.Font = new System.Drawing.Font("Arial", 12F);
+            this.statuslabel1.Location = new System.Drawing.Point(661, 143);
+            this.statuslabel1.Name = "statuslabel1";
+            this.statuslabel1.Size = new System.Drawing.Size(118, 23);
+            this.statuslabel1.TabIndex = 24;
+            this.statuslabel1.Text = "labelStatus2";
+            // 
+            // statusLabel2
+            // 
+            this.statusLabel2.AutoSize = true;
+            this.statusLabel2.Font = new System.Drawing.Font("Arial", 12F);
+            this.statusLabel2.Location = new System.Drawing.Point(662, 107);
+            this.statusLabel2.Name = "statusLabel2";
+            this.statusLabel2.Size = new System.Drawing.Size(118, 23);
+            this.statusLabel2.TabIndex = 23;
+            this.statusLabel2.Text = "labelStatus2";
+            // 
             // projectTeam
             // 
             this.projectTeam.BackColor = System.Drawing.Color.LightBlue;
@@ -104,6 +134,7 @@
             this.projectTeam.TabIndex = 22;
             this.projectTeam.Text = "Project team";
             this.projectTeam.UseVisualStyleBackColor = false;
+            this.projectTeam.Click += new System.EventHandler(this.projectTeam_Click);
             // 
             // descriptionStatusLabel
             // 
@@ -149,27 +180,27 @@
             // 
             // taskChart
             // 
-            chartArea7.Name = "ChartArea1";
-            this.taskChart.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.taskChart.Legends.Add(legend7);
+            chartArea1.Name = "ChartArea1";
+            this.taskChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.taskChart.Legends.Add(legend1);
             this.taskChart.Location = new System.Drawing.Point(591, 260);
             this.taskChart.Name = "taskChart";
-            this.taskChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.taskChart.Series.Add(series4);
+            this.taskChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.taskChart.Series.Add(series1);
             this.taskChart.Size = new System.Drawing.Size(519, 276);
             this.taskChart.TabIndex = 19;
             this.taskChart.Text = "chart2";
             // 
             // budgetChart
             // 
-            chartArea8.Name = "ChartArea1";
-            this.budgetChart.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.budgetChart.Legends.Add(legend8);
+            chartArea2.Name = "ChartArea1";
+            this.budgetChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.budgetChart.Legends.Add(legend2);
             this.budgetChart.Location = new System.Drawing.Point(48, 260);
             this.budgetChart.Name = "budgetChart";
             this.budgetChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
@@ -256,36 +287,6 @@
             this.budgetBox.Name = "budgetBox";
             this.budgetBox.Size = new System.Drawing.Size(94, 30);
             this.budgetBox.TabIndex = 12;
-            // 
-            // statusLabel2
-            // 
-            this.statusLabel2.AutoSize = true;
-            this.statusLabel2.Font = new System.Drawing.Font("Arial", 12F);
-            this.statusLabel2.Location = new System.Drawing.Point(662, 107);
-            this.statusLabel2.Name = "statusLabel2";
-            this.statusLabel2.Size = new System.Drawing.Size(118, 23);
-            this.statusLabel2.TabIndex = 23;
-            this.statusLabel2.Text = "labelStatus2";
-            // 
-            // statuslabel1
-            // 
-            this.statuslabel1.AutoSize = true;
-            this.statuslabel1.Font = new System.Drawing.Font("Arial", 12F);
-            this.statuslabel1.Location = new System.Drawing.Point(661, 143);
-            this.statuslabel1.Name = "statuslabel1";
-            this.statuslabel1.Size = new System.Drawing.Size(118, 23);
-            this.statuslabel1.TabIndex = 24;
-            this.statuslabel1.Text = "labelStatus2";
-            // 
-            // statuslabel3
-            // 
-            this.statuslabel3.AutoSize = true;
-            this.statuslabel3.Font = new System.Drawing.Font("Arial", 12F);
-            this.statuslabel3.Location = new System.Drawing.Point(661, 178);
-            this.statuslabel3.Name = "statuslabel3";
-            this.statuslabel3.Size = new System.Drawing.Size(115, 23);
-            this.statuslabel3.TabIndex = 25;
-            this.statuslabel3.Text = "statuslabel2";
             // 
             // projectReview
             // 

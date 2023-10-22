@@ -75,6 +75,18 @@
     <Compile Include="design\templatePanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="forms\createProjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\createProjectForm.Designer.cs">
+      <DependentUpon>createProjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\createTeamForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\createTeamForm.Designer.cs">
+      <DependentUpon>createTeamForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\homePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +131,12 @@
     </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="forms\createProjectForm.resx">
+      <DependentUpon>createProjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\createTeamForm.resx">
+      <DependentUpon>createTeamForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\homePage.resx">
       <DependentUpon>homePage.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\signUpForm.resx">
       <DependentUpon>signUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\teamReview.resx">
+      <DependentUpon>teamReview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\template.resx">
       <DependentUpon>template.cs</DependentUpon>

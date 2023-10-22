@@ -7,14 +7,80 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TaskManagement.Classes;
+using TaskManagment.classes;
 
 namespace TaskManagment.forms
 {
     public partial class teamReview : Form
     {
-        public teamReview()
+        string teamId, query;
+        taskGrid grid;
+        public teamReview(Team team)
         {
+            teamId = team.teamId;
             InitializeComponent();
+            setup();
+            query = "SELECT  u.id AS [Id], u.company AS Company, u.name AS [Name], u.fName AS Surename, u.jobDescription AS [Job description] " +
+            "FROM [user] u, [team] t " +
+            "WHERE u.id = t.uId AND t.id = '" + teamId + "'";
+            setGrid();
+            grid.Width = 543;
+            grid.Location = new System.Drawing.Point(165, 0);
+        }
+        public teamReview(Team team, string projectId)
+        {
+            teamId = team.teamId;
+            InitializeComponent();
+            setup();
+            query = "SELECT u.id AS [ID], u.company AS Company, u.name AS [Name], u.fName AS Surname, u.jobDescription AS [Job description], " +
+                "(SELECT SUM(hours) FROM [report] " +
+                "WHERE pId = '" + projectId.ToString() + "' AND uId = u.id) AS [Hours on project] " +
+                "FROM [user] u, [team] t " +
+                "WHERE u.id = t.uId AND t.id = '" + teamId + "'";
+            setGrid();
+            grid.Width = 644;
+            grid.Location = new System.Drawing.Point(85, 0);
+        }
+        public void setup()
+        {
+            title.Text = "Team: " + teamId + " members";
+            saveButton.Visible = false;
+            addUserTextBox.Visible = false;
+            label1.Visible = false;
+        }
+
+        public void setGrid()
+        {
+            grid = new taskGrid(query);
+            grid.Height = 376;
+            grid.BorderStyle = BorderStyle.None;
+            Panel1.Controls.Add(grid);
+        }
+        public void updateGrid()
+        {
+            Panel1.Controls.Remove(this.grid);
+            taskGrid grid = new taskGrid(query);
+            grid.Location = new Point(165, 30);
+            grid.Height = 376;
+            grid.BorderStyle = BorderStyle.None;
+            this.grid = grid;
+            Panel1.Controls.Add(this.grid);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            saveButton.Visible = true;
+            addUserTextBox.Visible = true;
+            label1.Visible = true;
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            DB dbHandler = DB.Instance;
+            List<string> user = dbHandler.Query("SELECT id FROM [user] WHERE id = '" + addUserTextBox.Text.ToString() + "'").ToArray()[0];
+            dbHandler.UpdateDB("INSERT INTO [team] ([id],[uid]) VALUES ('" + teamId + "','" + user.ToArray()[0] + "')");
+            updateGrid();
         }
     }
 }

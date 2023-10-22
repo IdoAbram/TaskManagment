@@ -203,8 +203,7 @@ namespace TaskManagment
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(490, 556);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(495, 556);
             this.Controls.Add(this.title);
             this.Controls.Add(this.panel1);
             this.Name = "loginForm";

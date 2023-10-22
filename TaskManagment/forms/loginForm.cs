@@ -27,7 +27,8 @@ namespace TaskManagment
             if (dbHandler.IsExist(query))
             {
                 this.Hide();
-                new homePage(idBox.Text).Show();
+                homePage homePage = homePage.GetInstance(idBox.Text);
+                homePage.Show();
             }
             else
             {

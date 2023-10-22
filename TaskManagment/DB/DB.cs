@@ -68,10 +68,13 @@ namespace TaskManagment.classes
         // Ensure the connection is closed when the application exits
         ~DB()
         {
-            if (connection.State == System.Data.ConnectionState.Open)
+            try
             {
-                connection.Close();
-            }
+                if (connection.State == System.Data.ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }catch (Exception ex) { }
         }
     }
 }
