@@ -34,6 +34,7 @@
             this.addUserTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +51,7 @@
             // Panel1
             // 
             this.Panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Panel1.Controls.Add(this.deleteButton);
             this.Panel1.Controls.Add(this.button1);
             this.Panel1.Controls.Add(this.addUserTextBox);
             this.Panel1.Controls.Add(this.label1);
@@ -102,6 +104,18 @@
             this.saveButton.UseVisualStyleBackColor = false;
             this.saveButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
+            // deleteButton
+            // 
+            this.deleteButton.BackColor = System.Drawing.Color.LightBlue;
+            this.deleteButton.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.deleteButton.Location = new System.Drawing.Point(22, 455);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(182, 44);
+            this.deleteButton.TabIndex = 27;
+            this.deleteButton.Text = "Delete team";
+            this.deleteButton.UseVisualStyleBackColor = false;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
             // teamReview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -127,5 +141,6 @@
         private System.Windows.Forms.TextBox addUserTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button deleteButton;
     }
 }

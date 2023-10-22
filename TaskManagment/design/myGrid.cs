@@ -4,6 +4,7 @@ using System.Data;
 using System.Windows.Forms;
 using TaskManagment.classes;
 using System.Drawing;
+using System.Collections.Generic;
 
 public class taskGrid : DataGridView
 {
@@ -28,7 +29,7 @@ public class taskGrid : DataGridView
     private void InitializeComponents()
     {
         // Set up other properties of your DataGridView
-        this.Anchor = AnchorStyles.Right;
+        this.Anchor = AnchorStyles.None;
         this.BackgroundColor = Color.WhiteSmoke;
     }
 
@@ -50,7 +51,6 @@ public class taskGrid : DataGridView
 
         this.DataSource = dataTable;
     }
-
     private void SaveButton_Click(object sender, EventArgs e)
     {
         // Create a DataTable to hold the changes

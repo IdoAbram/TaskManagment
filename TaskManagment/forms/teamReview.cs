@@ -14,10 +14,11 @@ namespace TaskManagment.forms
 {
     public partial class teamReview : Form
     {
-        string teamId, query;
+        string teamId, query, id;
         taskGrid grid;
-        public teamReview(Team team)
+        public teamReview(Team team, string id)
         {
+            this.id = id;
             teamId = team.teamId;
             InitializeComponent();
             setup();
@@ -28,8 +29,9 @@ namespace TaskManagment.forms
             grid.Width = 543;
             grid.Location = new System.Drawing.Point(165, 0);
         }
-        public teamReview(Team team, string projectId)
+        public teamReview(Team team, string projectId, string id)
         {
+            this.id = id;
             teamId = team.teamId;
             InitializeComponent();
             setup();
@@ -73,6 +75,18 @@ namespace TaskManagment.forms
             saveButton.Visible = true;
             addUserTextBox.Visible = true;
             label1.Visible = true;
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            DB dbHandler = DB.Instance;
+            dbHandler.UpdateDB("DELETE FROM [team] WHERE id = '" + teamId + "'");
+            this.Hide();
+            string query = @"
+                SELECT t.id
+                FROM [user] u, [team] t
+                WHERE u.id = t.uid AND u.id = '" + id + "'";
+            homePage.GetInstance(id).updatehomePage(id, "My teams", query, "team");
         }
 
         private void AddButton_Click(object sender, EventArgs e)

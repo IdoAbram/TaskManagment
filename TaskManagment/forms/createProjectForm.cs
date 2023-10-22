@@ -34,7 +34,7 @@ namespace TaskManagment.forms
                 FROM [user] u, [team] t, [project] p
                 WHERE u.id = t.uid AND t.id = p.tid AND u.id = '" + id + "'";
             homePage.GetInstance(id).updatehomePage(id, "My projects", query, "project");
-            new projectReview(new Project(projecttextBox.Text.ToString(),DateTime.Parse(StartingDate.Text.ToString()).ToString().Substring(0,10), DateTime.Parse(Deadline.Text.ToString()).ToString().Substring(0, 10), double.Parse(budgettextBox.Text.ToString()),comboBox1.Text.ToString())).Show();
+            new projectReview(new Project(projecttextBox.Text.ToString(),DateTime.Parse(StartingDate.Text.ToString()).ToString().Substring(0,10), DateTime.Parse(Deadline.Text.ToString()).ToString().Substring(0, 10), double.Parse(budgettextBox.Text.ToString()),comboBox1.Text.ToString()),id).Show();
         }
     }
 }

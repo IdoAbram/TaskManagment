@@ -32,7 +32,7 @@ namespace TaskManagment.forms
                 FROM [user] u, [team] t
                 WHERE u.id = t.uid AND u.id = '" + id + "'";
             homePage.GetInstance(id).updatehomePage(id, "My teams", query, "team");
-            new teamReview(new Team(textBox1.Text.ToString())).Show();
+            new teamReview(new Team(textBox1.Text.ToString()), id).Show();
         }
     }
 }

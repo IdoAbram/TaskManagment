@@ -53,6 +53,7 @@
             this.eDate = new System.Windows.Forms.Label();
             this.budget = new System.Windows.Forms.Label();
             this.budgetBox = new System.Windows.Forms.TextBox();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.roundedPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.taskChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.budgetChart)).BeginInit();
@@ -71,6 +72,7 @@
             // roundedPanel1
             // 
             this.roundedPanel1.BackColor = System.Drawing.Color.White;
+            this.roundedPanel1.Controls.Add(this.deleteButton);
             this.roundedPanel1.Controls.Add(this.statuslabel3);
             this.roundedPanel1.Controls.Add(this.statuslabel1);
             this.roundedPanel1.Controls.Add(this.statusLabel2);
@@ -288,6 +290,17 @@
             this.budgetBox.Size = new System.Drawing.Size(94, 30);
             this.budgetBox.TabIndex = 12;
             // 
+            // deleteButton
+            // 
+            this.deleteButton.BackColor = System.Drawing.Color.LightBlue;
+            this.deleteButton.Location = new System.Drawing.Point(420, 626);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(122, 44);
+            this.deleteButton.TabIndex = 26;
+            this.deleteButton.Text = "Delete project";
+            this.deleteButton.UseVisualStyleBackColor = false;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
             // projectReview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -329,5 +342,6 @@
         private System.Windows.Forms.Label statusLabel2;
         private System.Windows.Forms.Label statuslabel1;
         private System.Windows.Forms.Label statuslabel3;
+        private System.Windows.Forms.Button deleteButton;
     }
 }

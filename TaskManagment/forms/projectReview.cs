@@ -19,8 +19,10 @@ namespace TaskManagment.forms
     {
         Project project;
         DB dbHandler = DB.Instance;
-        public projectReview(Project project)
+        string id;
+        public projectReview(Project project,string id)
         {
+            this.id = id;
             this.project = project;
             InitializeComponent();
             setUp();
@@ -203,6 +205,17 @@ namespace TaskManagment.forms
         private void projectTeam_Click(object sender, EventArgs e)
         {
             new teamReview(new Team(project.TeamId),project.Id).Show();
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            dbHandler.UpdateDB("DELETE FROM [project] WHERE id = '" + project.Id + "'");
+            this.Hide();
+            string query = @"
+                SELECT p.id
+                FROM [user] u, [team] t, [project] p
+                WHERE u.id = t.uid AND t.id = p.tid AND u.id = '" + id + "'";
+            homePage.GetInstance(id).updatehomePage(id, "My projects", query, "project");
         }
     }
 }
