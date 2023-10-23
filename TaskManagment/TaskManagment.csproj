@@ -33,29 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Google.Apis, Version=1.62.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.1.62.1\lib\net45\Google.Apis.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis.Auth, Version=1.62.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Auth.1.62.1\lib\net461\Google.Apis.Auth.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.62.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Auth.1.62.1\lib\net461\Google.Apis.Auth.PlatformServices.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis.Core, Version=1.62.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Core.1.62.1\lib\net45\Google.Apis.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis.Gmail.v1, Version=1.62.1.3189, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Gmail.v1.1.62.1.3189\lib\net45\Google.Apis.Gmail.v1.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis.PlatformServices, Version=1.62.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.1.62.1\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="SendGrid, Version=9.28.1.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
-      <HintPath>..\packages\SendGrid.9.28.1\lib\net452\SendGrid.dll</HintPath>
     </Reference>
     <Reference Include="StarkbankEcdsa, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b2e6337a5d77bfbc, processorArchitecture=MSIL">
       <HintPath>..\packages\starkbank-ecdsa.1.3.3\lib\net452\StarkbankEcdsa.dll</HintPath>
@@ -63,6 +42,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,13 +54,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="classes\DB.cs" />
-    <Compile Include="classes\emailAPI.cs" />
+    <Compile Include="classes\User.cs" />
+    <Compile Include="DB\DB.cs" />
+    <Compile Include="classes\Project.cs" />
+    <Compile Include="classes\Report.cs" />
+    <Compile Include="classes\myTask.cs" />
+    <Compile Include="classes\Team.cs" />
     <Compile Include="design\myButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="design\myList.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="design\myPanel.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="design\myGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="design\templatePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="forms\createProjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\createProjectForm.Designer.cs">
+      <DependentUpon>createProjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\createReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\createReportForm.Designer.cs">
+      <DependentUpon>createReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\createTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\createTaskForm.Designer.cs">
+      <DependentUpon>createTaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\createTeamForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\createTeamForm.Designer.cs">
+      <DependentUpon>createTeamForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\homePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\homePage.Designer.cs">
+      <DependentUpon>homePage.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\loginForm.cs">
       <SubType>Form</SubType>
@@ -88,10 +111,79 @@
     <Compile Include="forms\loginForm.Designer.cs">
       <DependentUpon>loginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\myMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\myMessageBox.Designer.cs">
+      <DependentUpon>myMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\projectReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\projectReview.Designer.cs">
+      <DependentUpon>projectReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\signUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\signUpForm.Designer.cs">
+      <DependentUpon>signUpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\teamReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\teamReview.Designer.cs">
+      <DependentUpon>teamReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\template.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\template.Designer.cs">
+      <DependentUpon>template.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\userReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\userReview.Designer.cs">
+      <DependentUpon>userReview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="forms\createProjectForm.resx">
+      <DependentUpon>createProjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\createReportForm.resx">
+      <DependentUpon>createReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\createTaskForm.resx">
+      <DependentUpon>createTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\createTeamForm.resx">
+      <DependentUpon>createTeamForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\homePage.resx">
+      <DependentUpon>homePage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\myMessageBox.resx">
+      <DependentUpon>myMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\projectReview.resx">
+      <DependentUpon>projectReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\signUpForm.resx">
+      <DependentUpon>signUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\teamReview.resx">
+      <DependentUpon>teamReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\template.resx">
+      <DependentUpon>template.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\userReview.resx">
+      <DependentUpon>userReview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -102,6 +194,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -115,6 +210,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
