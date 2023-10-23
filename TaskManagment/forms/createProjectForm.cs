@@ -27,14 +27,21 @@ namespace TaskManagment.forms
         private void createButton_Click(object sender, EventArgs e)
         {
             DB dbHandler = DB.Instance;
-            dbHandler.UpdateDB("INSERT INTO [project] ([id],[sDate],[eDate],[budget],[tId]) VALUES ('" + projecttextBox.Text.ToString() + "','" + DateTime.Parse(StartingDate.Text.ToString()).ToString().Substring(0, 10) + "','"+ DateTime.Parse(Deadline.Text.ToString()).ToString().Substring(0, 10) + "','" + budgettextBox.Text.ToString() + "','" + comboBox1.Text.ToString() + "')");
-            this.Hide();
-            string query = @"
+            if (!comboBox1.Items.Contains(comboBox1.Text))
+            {
+                new myMessageBox("The team that you choosed has not been found. \n Do you want to create a new team?", () => { new createTeamForm(id).Show(); }, () => { myMessageBox.ActiveForm.Hide(); }).Show();
+            }
+            else
+            {
+                dbHandler.UpdateDB("INSERT INTO [project] ([id],[sDate],[eDate],[budget],[tId]) VALUES ('" + projecttextBox.Text.ToString() + "','" + DateTime.Parse(StartingDate.Text.ToString()).ToString().Substring(0, 10) + "','" + DateTime.Parse(Deadline.Text.ToString()).ToString().Substring(0, 10) + "','" + budgettextBox.Text.ToString() + "','" + comboBox1.Text.ToString() + "')");
+                this.Hide();
+                string query = @"
                 SELECT p.id
                 FROM [user] u, [team] t, [project] p
                 WHERE u.id = t.uid AND t.id = p.tid AND u.id = '" + id + "'";
-            homePage.GetInstance(id).updatehomePage(id, "My projects", query, "project");
-            new projectReview(new Project(projecttextBox.Text.ToString(),DateTime.Parse(StartingDate.Text.ToString()).ToString().Substring(0,10), DateTime.Parse(Deadline.Text.ToString()).ToString().Substring(0, 10), double.Parse(budgettextBox.Text.ToString()),comboBox1.Text.ToString()),id).Show();
+                homePage.GetInstance(id).updatehomePage(id, "My projects", query, "project");
+                new projectReview(new Project(projecttextBox.Text.ToString(), DateTime.Parse(StartingDate.Text.ToString()).ToString().Substring(0, 10), DateTime.Parse(Deadline.Text.ToString()).ToString().Substring(0, 10), double.Parse(budgettextBox.Text.ToString()), comboBox1.Text.ToString()), id).Show();
+            }
         }
     }
 }

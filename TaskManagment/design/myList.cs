@@ -17,7 +17,7 @@ namespace TaskManagment.design
 
             int verticalPosition = 150; // Initial vertical position
 
-            this.Dock = DockStyle.Right; // Fill the entire form
+            this.Location = new Point(430, 0); // Fill the entire form
             this.Width = 600;
             this.Height = 600; // Limit the height of the main panel
 

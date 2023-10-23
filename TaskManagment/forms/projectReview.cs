@@ -204,7 +204,7 @@ namespace TaskManagment.forms
 
         private void projectTeam_Click(object sender, EventArgs e)
         {
-            new teamReview(new Team(project.TeamId),project.Id).Show();
+            new teamReview(new Team(project.TeamId),project.Id,id).Show();
         }
 
         private void deleteButton_Click(object sender, EventArgs e)

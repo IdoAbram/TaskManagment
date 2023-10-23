@@ -206,6 +206,9 @@ namespace TaskManagment
             this.ClientSize = new System.Drawing.Size(495, 556);
             this.Controls.Add(this.title);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "loginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login";

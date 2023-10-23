@@ -24,13 +24,15 @@ public class taskGrid : DataGridView
         saveButton.Click += SaveButton_Click; // Attach an event handler
         this.Controls.Add(saveButton);
         saveButton.Width = 42;
+        this.AllowUserToAddRows = false;
     }
 
     private void InitializeComponents()
     {
         // Set up other properties of your DataGridView
-        this.Anchor = AnchorStyles.None;
+        this.Location = new Point(430, 150);
         this.BackgroundColor = Color.WhiteSmoke;
+        this.Height = 400;
     }
 
     private void LoadData()

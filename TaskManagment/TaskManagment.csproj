@@ -81,6 +81,18 @@
     <Compile Include="forms\createProjectForm.Designer.cs">
       <DependentUpon>createProjectForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\createReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\createReportForm.Designer.cs">
+      <DependentUpon>createReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\createTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\createTaskForm.Designer.cs">
+      <DependentUpon>createTaskForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\createTeamForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +110,12 @@
     </Compile>
     <Compile Include="forms\loginForm.Designer.cs">
       <DependentUpon>loginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\myMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\myMessageBox.Designer.cs">
+      <DependentUpon>myMessageBox.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\projectReview.cs">
       <SubType>Form</SubType>
@@ -134,6 +152,12 @@
     <EmbeddedResource Include="forms\createProjectForm.resx">
       <DependentUpon>createProjectForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\createReportForm.resx">
+      <DependentUpon>createReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\createTaskForm.resx">
+      <DependentUpon>createTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\createTeamForm.resx">
       <DependentUpon>createTeamForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\myMessageBox.resx">
+      <DependentUpon>myMessageBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\projectReview.resx">
       <DependentUpon>projectReview.cs</DependentUpon>

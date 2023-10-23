@@ -13,8 +13,9 @@ namespace TaskManagment.forms
         private static homePage instance = null;
         private string table;
         private DB dbHandler = DB.Instance;
-        private string id;
-        private ComboBox filterTypeComboBox, filterComboBox;
+        private string id, taskQuery = "";
+        private ComboBox filterTypeComboBox = new ComboBox();
+        private ComboBox filterComboBox = new ComboBox();
 
         private homePage(string id)
         {
@@ -58,21 +59,26 @@ namespace TaskManagment.forms
 
             if (table == "task")
             {
+                addTaskButton();
                 addTaskFilterBar();
                 // Placeholder for handling tasks
-                string taskQuery = query;
+                if(taskQuery == "")
+                {
+                    taskQuery = query;
+                }
                 taskGrid grid = new taskGrid(taskQuery);
                 grid.Width = 543;
-                grid.Location = new System.Drawing.Point(375, 150);
+                grid.Location = new System.Drawing.Point(430, 150);
                 Controls.Add(grid);
             }
             else if (table == "report")
             {
                 // Placeholder for handling reports
+                addReportButton();
                 string reportQuery = "SELECT id AS [Report ID], pId AS [Project ID], taskId AS [Task ID], hours AS [Hours], date AS [Date] FROM [report] WHERE uId = '" + id + "'";
                 taskGrid grid = new taskGrid(reportQuery);
                 grid.Width = 543;
-                grid.Location = new System.Drawing.Point(375, 150);
+                grid.Location = new System.Drawing.Point(430, 150);
                 Controls.Add(grid);
             }
             else if (table == "project")
@@ -106,11 +112,10 @@ namespace TaskManagment.forms
             label.Text = title;
             label.Font = new System.Drawing.Font(label.Font.FontFamily, 36, System.Drawing.FontStyle.Regular);
             label.ForeColor = System.Drawing.Color.Black;
-            label.Location = new System.Drawing.Point(this.Width - label.PreferredWidth - 100, 40);
+            label.Location = new System.Drawing.Point(430, 40);
 
             Controls.Add(label);
         }
-
         private void addProjectButton()
         {
             RoundedPanel roundedPanel = new RoundedPanel();
@@ -121,7 +126,7 @@ namespace TaskManagment.forms
             addTeamButton.Size = new System.Drawing.Size(200, 60);
             addTeamButton.Location = new System.Drawing.Point(0, 0);
             addTeamButton.Font = new Font("Arial Narrow", 16.2f, FontStyle.Regular | FontStyle.Regular);
-            addTeamButton.Text = "Create new Project";
+            addTeamButton.Text = "New Project";
             addTeamButton.FlatStyle = FlatStyle.Flat;
             addTeamButton.FlatAppearance.BorderColor = addTeamButton.BackColor;
             addTeamButton.Click += (sender, e) =>
@@ -141,7 +146,7 @@ namespace TaskManagment.forms
             addTeamButton.Size = new System.Drawing.Size(200, 60);
             addTeamButton.Location = new System.Drawing.Point(0, 0);
             addTeamButton.Font = new Font("Arial Narrow", 16.2f, FontStyle.Regular | FontStyle.Regular);
-            addTeamButton.Text = "Create new Team";
+            addTeamButton.Text = "New Team";
             addTeamButton.FlatStyle = FlatStyle.Flat;
             addTeamButton.FlatAppearance.BorderColor = addTeamButton.BackColor;
             addTeamButton.Click += (sender, e) =>
@@ -151,25 +156,61 @@ namespace TaskManagment.forms
             roundedPanel.Controls.Add(addTeamButton);
             this.Controls.Add(roundedPanel);
         }
+        private void addTaskButton()
+        {
+            RoundedPanel roundedPanel = new RoundedPanel();
+            roundedPanel.Location = new System.Drawing.Point(610, 610);
+            roundedPanel.Size = new System.Drawing.Size(200, 60);
+            RoundedButton addTeamButton = new RoundedButton();
+            addTeamButton.BackColor = Color.LightBlue;
+            addTeamButton.Size = new System.Drawing.Size(200, 60);
+            addTeamButton.Location = new System.Drawing.Point(0, 0);
+            addTeamButton.Font = new Font("Arial Narrow", 16.2f, FontStyle.Regular | FontStyle.Regular);
+            addTeamButton.Text = "New Task";
+            addTeamButton.FlatStyle = FlatStyle.Flat;
+            addTeamButton.FlatAppearance.BorderColor = addTeamButton.BackColor;
+            addTeamButton.Click += (sender, e) =>
+            {
+                new createTaskForm(id).Show();
+            };
+            roundedPanel.Controls.Add(addTeamButton);
+            this.Controls.Add(roundedPanel);
+        }
+        private void addReportButton()
+        {
+            RoundedPanel roundedPanel = new RoundedPanel();
+            roundedPanel.Location = new System.Drawing.Point(610, 610);
+            roundedPanel.Size = new System.Drawing.Size(200, 60);
+            RoundedButton addTeamButton = new RoundedButton();
+            addTeamButton.BackColor = Color.LightBlue;
+            addTeamButton.Size = new System.Drawing.Size(200, 60);
+            addTeamButton.Location = new System.Drawing.Point(0, 0);
+            addTeamButton.Font = new Font("Arial Narrow", 16.2f, FontStyle.Regular | FontStyle.Regular);
+            addTeamButton.Text = "New Report";
+            addTeamButton.FlatStyle = FlatStyle.Flat;
+            addTeamButton.FlatAppearance.BorderColor = addTeamButton.BackColor;
+            addTeamButton.Click += (sender, e) =>
+            {
+                new createReportForm(id).Show();
+            };
+            roundedPanel.Controls.Add(addTeamButton);
+            this.Controls.Add(roundedPanel);
+        }
         private void addTaskFilterBar()
         {
-            filterComboBox = new ComboBox();
-            filterComboBox.Location = new System.Drawing.Point(500, 120);
-            filterComboBox.Text = "filter by";
-            filterComboBox.Items.Add("Project ID");
-            filterComboBox.Items.Add("Team ID");
-            filterComboBox.Items.Add("No filter");
+            filterComboBox.Location = new System.Drawing.Point(430, 120);
+            if (filterComboBox.Items.Count < 1)
+            {
+                filterComboBox.Items.Add("Project ID");
+                filterComboBox.Items.Add("Team ID");
+                filterComboBox.Items.Add("No filter");
+                filterComboBox.Text = "no filter";
+            }
 
-            ComboBox filterTypeComboBox = new ComboBox(); // Declare filterTypeComboBox outside the event handler
-            filterTypeComboBox.Location = new System.Drawing.Point(650, 120); // Move location and common properties here
-
+            filterTypeComboBox.Location = new System.Drawing.Point(570, 120); // Move location and common properties here
+            this.Controls.Add(filterTypeComboBox);
             filterComboBox.SelectedIndexChanged += (sender, e) =>
             {
-                if (this.Controls.Contains(filterTypeComboBox))
-                {
-                    this.Controls.Remove(filterTypeComboBox);
-                }
-
                 filterTypeComboBox.Items.Clear(); // Clear existing items
 
                 filterTypeComboBox.Text = "Choose: " + filterComboBox.SelectedItem.ToString();
@@ -182,7 +223,6 @@ namespace TaskManagment.forms
                     {
                         filterTypeComboBox.Items.Add(item[0]);
                     }
-                    this.Controls.Add(filterTypeComboBox);
                 }
                 else if (filterComboBox.SelectedItem.ToString() == "Team ID")
                 {
@@ -190,37 +230,43 @@ namespace TaskManagment.forms
                     {
                         filterTypeComboBox.Items.Add(item[0]);
                     }
-                    this.Controls.Add(filterTypeComboBox);
                 }
-                else
+                else if(filterComboBox.SelectedItem.ToString() == "No filter")
                 {
-                    string query = @"SELECT t1.id AS [Task ID], t1.description AS Description, t1.pid AS [Project ID], t1.tid AS [Team ID], t1.status AS [Status] " +
-                        "FROM [task] t1, [team] t2 " +
-                        "WHERE t2.uid = '" + id + "' AND t2.id = t1.tid";
-                    homePage.GetInstance(id).updatehomePage(id, "My tasks", query, "task");
+                    fillterring();
                 }
-            };
-
+                filterTypeComboBox.Items.Add("All");
+            };       
+            
             filterTypeComboBox.SelectedIndexChanged += (sender, e) =>
             {
-                if (filterComboBox.SelectedItem.ToString() == "Project ID")
-                {
-                    string query = @"SELECT t1.id AS [Task ID], t1.description AS Description, t1.pid AS [Project ID], t1.tid AS [Team ID], t1.status AS [Status] " +
-                        "FROM [task] t1, [team] t2 " +
-                        "WHERE t2.uid = '" + id + "' AND t2.id = t1.tid AND t1.pid = '" + filterTypeComboBox.SelectedItem.ToString() + "'";
-                    homePage.GetInstance(id).updatehomePage(id, "My tasks", query, "task");
-                }
-                else
-                {
-                    string query = @"SELECT t1.id AS [Task ID], t1.description AS Description, t1.pid AS [Project ID], t1.tid AS [Team ID], t1.status AS [Status] " +
-                        "FROM [task] t1, [team] t2 " +
-                        "WHERE t2.uid = '" + id + "' AND t2.id = t1.tid AND t1.tid = '" + filterTypeComboBox.SelectedItem.ToString() + "'";
-                    homePage.GetInstance(id).updatehomePage(id, "My tasks", query, "task");
-                }
+                fillterring();
             };
-
             this.Controls.Add(filterComboBox);
         }
-
+        private void fillterring()
+        {
+            if (filterComboBox.SelectedItem == null || filterComboBox.SelectedItem.ToString() == "No filter" || filterTypeComboBox.SelectedItem.ToString() == "All")
+            {
+                taskQuery = @"SELECT t1.id AS [Task ID], t1.description AS Description, t1.pid AS [Project ID], t1.tid AS [Team ID], t1.status AS [Status] " +
+                    "FROM [task] t1, [team] t2 " +
+                    "WHERE t2.uid = '" + id + "' AND t2.id = t1.tid";
+                homePage.GetInstance(id).updatehomePage(id, "My tasks", taskQuery, "task");
+            }
+            else if (filterComboBox.SelectedItem.ToString() == "Team ID")
+            {
+                taskQuery = @"SELECT t1.id AS [Task ID], t1.description AS Description, t1.pid AS [Project ID], t1.tid AS [Team ID], t1.status AS [Status] " +
+                   "FROM [task] t1, [team] t2 " +
+                   "WHERE t2.uid = '" + id + "' AND t2.id = t1.tid AND t1.tid = '" + filterTypeComboBox.SelectedItem.ToString() + "'";
+                homePage.GetInstance(id).updatehomePage(id, "My tasks", taskQuery, "task");
+            }
+            else if (filterComboBox.SelectedItem.ToString() == "Project ID")
+            {
+                taskQuery = @"SELECT t1.id AS [Task ID], t1.description AS Description, t1.pid AS [Project ID], t1.tid AS [Team ID], t1.status AS [Status] " +
+                    "FROM [task] t1, [team] t2 " +
+                    "WHERE t2.uid = '" + id + "' AND t2.id = t1.tid AND t1.pid = '" + filterTypeComboBox.SelectedItem.ToString() + "'";
+                homePage.GetInstance(id).updatehomePage(id, "My tasks", taskQuery, "task");
+            }
+        }
     }
 }
