@@ -13,14 +13,16 @@ namespace TaskManagement.Classes
         public string EndDate { get; set; }
         public double Budget { get; set; }
         public string TeamId { get; set; }
+        public string Leader { get; set; }
 
-        public Project(string id, string startDate, string endDate, double budget, string teamId)
+        public Project(string id, string startDate, string endDate, double budget, string teamId, string leader)
         {
             Id = id;
             StartDate = startDate;
             EndDate = endDate;
             Budget = budget;
             TeamId = teamId;
+            Leader = leader;
         }
     }
 }

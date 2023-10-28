@@ -164,6 +164,7 @@
             // 
             this.hourRateBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hourRateBox.Location = new System.Drawing.Point(60, 473);
+            this.hourRateBox.MaxLength = 20;
             this.hourRateBox.Name = "hourRateBox";
             this.hourRateBox.Size = new System.Drawing.Size(245, 22);
             this.hourRateBox.TabIndex = 22;
@@ -205,6 +206,7 @@
             // 
             this.fNameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.fNameBox.Location = new System.Drawing.Point(60, 377);
+            this.fNameBox.MaxLength = 20;
             this.fNameBox.Name = "fNameBox";
             this.fNameBox.Size = new System.Drawing.Size(245, 22);
             this.fNameBox.TabIndex = 17;
@@ -213,6 +215,7 @@
             // 
             this.nameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nameBox.Location = new System.Drawing.Point(60, 329);
+            this.nameBox.MaxLength = 20;
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(245, 22);
             this.nameBox.TabIndex = 16;
@@ -244,6 +247,7 @@
             this.confirmPasswordBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.confirmPasswordBox.Font = new System.Drawing.Font("MS Outlook", 7.8F);
             this.confirmPasswordBox.Location = new System.Drawing.Point(60, 233);
+            this.confirmPasswordBox.MaxLength = 20;
             this.confirmPasswordBox.Name = "confirmPasswordBox";
             this.confirmPasswordBox.Size = new System.Drawing.Size(245, 21);
             this.confirmPasswordBox.TabIndex = 13;
@@ -252,6 +256,7 @@
             // 
             this.companyBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.companyBox.Location = new System.Drawing.Point(62, 281);
+            this.companyBox.MaxLength = 20;
             this.companyBox.Name = "companyBox";
             this.companyBox.Size = new System.Drawing.Size(245, 22);
             this.companyBox.TabIndex = 12;
@@ -345,6 +350,7 @@
             this.passwordBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.passwordBox.Font = new System.Drawing.Font("MS Outlook", 7.8F);
             this.passwordBox.Location = new System.Drawing.Point(60, 185);
+            this.passwordBox.MaxLength = 20;
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(245, 21);
             this.passwordBox.TabIndex = 2;
@@ -353,6 +359,7 @@
             // 
             this.idBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.idBox.Location = new System.Drawing.Point(60, 137);
+            this.idBox.MaxLength = 20;
             this.idBox.Name = "idBox";
             this.idBox.Size = new System.Drawing.Size(245, 22);
             this.idBox.TabIndex = 1;

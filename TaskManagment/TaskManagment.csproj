@@ -149,6 +149,7 @@
     </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="validation\Validation.cs" />
     <EmbeddedResource Include="forms\createProjectForm.resx">
       <DependentUpon>createProjectForm.cs</DependentUpon>
     </EmbeddedResource>

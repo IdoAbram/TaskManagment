@@ -28,13 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.title = new System.Windows.Forms.Label();
             this.roundedPanel1 = new TaskManagment.design.RoundedPanel();
+            this.LeaderId = new System.Windows.Forms.Label();
+            this.LeaderIdBox = new System.Windows.Forms.TextBox();
+            this.eDateBox = new System.Windows.Forms.DateTimePicker();
+            this.sDateBox = new System.Windows.Forms.DateTimePicker();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.statuslabel3 = new System.Windows.Forms.Label();
             this.statuslabel1 = new System.Windows.Forms.Label();
             this.statusLabel2 = new System.Windows.Forms.Label();
@@ -47,13 +52,10 @@
             this.budgetChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.idLabel = new System.Windows.Forms.Label();
             this.idBox = new System.Windows.Forms.TextBox();
-            this.sDateBox = new System.Windows.Forms.TextBox();
             this.sDate = new System.Windows.Forms.Label();
-            this.eDateBox = new System.Windows.Forms.TextBox();
             this.eDate = new System.Windows.Forms.Label();
             this.budget = new System.Windows.Forms.Label();
             this.budgetBox = new System.Windows.Forms.TextBox();
-            this.deleteButton = new System.Windows.Forms.Button();
             this.roundedPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.taskChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.budgetChart)).BeginInit();
@@ -72,6 +74,10 @@
             // roundedPanel1
             // 
             this.roundedPanel1.BackColor = System.Drawing.Color.White;
+            this.roundedPanel1.Controls.Add(this.LeaderId);
+            this.roundedPanel1.Controls.Add(this.LeaderIdBox);
+            this.roundedPanel1.Controls.Add(this.eDateBox);
+            this.roundedPanel1.Controls.Add(this.sDateBox);
             this.roundedPanel1.Controls.Add(this.deleteButton);
             this.roundedPanel1.Controls.Add(this.statuslabel3);
             this.roundedPanel1.Controls.Add(this.statuslabel1);
@@ -85,9 +91,7 @@
             this.roundedPanel1.Controls.Add(this.budgetChart);
             this.roundedPanel1.Controls.Add(this.idLabel);
             this.roundedPanel1.Controls.Add(this.idBox);
-            this.roundedPanel1.Controls.Add(this.sDateBox);
             this.roundedPanel1.Controls.Add(this.sDate);
-            this.roundedPanel1.Controls.Add(this.eDateBox);
             this.roundedPanel1.Controls.Add(this.eDate);
             this.roundedPanel1.Controls.Add(this.budget);
             this.roundedPanel1.Controls.Add(this.budgetBox);
@@ -96,6 +100,53 @@
             this.roundedPanel1.Name = "roundedPanel1";
             this.roundedPanel1.Size = new System.Drawing.Size(1136, 703);
             this.roundedPanel1.TabIndex = 18;
+            // 
+            // LeaderId
+            // 
+            this.LeaderId.AutoSize = true;
+            this.LeaderId.BackColor = System.Drawing.Color.Transparent;
+            this.LeaderId.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LeaderId.Location = new System.Drawing.Point(44, 96);
+            this.LeaderId.Name = "LeaderId";
+            this.LeaderId.Size = new System.Drawing.Size(78, 24);
+            this.LeaderId.TabIndex = 29;
+            this.LeaderId.Text = "Leader id";
+            // 
+            // LeaderIdBox
+            // 
+            this.LeaderIdBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LeaderIdBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LeaderIdBox.Location = new System.Drawing.Point(47, 123);
+            this.LeaderIdBox.Name = "LeaderIdBox";
+            this.LeaderIdBox.Size = new System.Drawing.Size(218, 30);
+            this.LeaderIdBox.TabIndex = 30;
+            // 
+            // eDateBox
+            // 
+            this.eDateBox.CalendarFont = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.eDateBox.Location = new System.Drawing.Point(303, 115);
+            this.eDateBox.Name = "eDateBox";
+            this.eDateBox.Size = new System.Drawing.Size(258, 22);
+            this.eDateBox.TabIndex = 28;
+            // 
+            // sDateBox
+            // 
+            this.sDateBox.CalendarFont = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.sDateBox.Location = new System.Drawing.Point(303, 63);
+            this.sDateBox.Name = "sDateBox";
+            this.sDateBox.Size = new System.Drawing.Size(258, 22);
+            this.sDateBox.TabIndex = 27;
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.BackColor = System.Drawing.Color.LightBlue;
+            this.deleteButton.Location = new System.Drawing.Point(420, 626);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(122, 44);
+            this.deleteButton.TabIndex = 26;
+            this.deleteButton.Text = "Delete project";
+            this.deleteButton.UseVisualStyleBackColor = false;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // statuslabel3
             // 
@@ -182,27 +233,27 @@
             // 
             // taskChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.taskChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.taskChart.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.taskChart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.taskChart.Legends.Add(legend3);
             this.taskChart.Location = new System.Drawing.Point(591, 260);
             this.taskChart.Name = "taskChart";
             this.taskChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.taskChart.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.taskChart.Series.Add(series2);
             this.taskChart.Size = new System.Drawing.Size(519, 276);
             this.taskChart.TabIndex = 19;
             this.taskChart.Text = "chart2";
             // 
             // budgetChart
             // 
-            chartArea2.Name = "ChartArea1";
-            this.budgetChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.budgetChart.Legends.Add(legend2);
+            chartArea4.Name = "ChartArea1";
+            this.budgetChart.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.budgetChart.Legends.Add(legend4);
             this.budgetChart.Location = new System.Drawing.Point(48, 260);
             this.budgetChart.Name = "budgetChart";
             this.budgetChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
@@ -230,15 +281,6 @@
             this.idBox.Size = new System.Drawing.Size(218, 30);
             this.idBox.TabIndex = 17;
             // 
-            // sDateBox
-            // 
-            this.sDateBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sDateBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sDateBox.Location = new System.Drawing.Point(317, 63);
-            this.sDateBox.Name = "sDateBox";
-            this.sDateBox.Size = new System.Drawing.Size(133, 30);
-            this.sDateBox.TabIndex = 6;
-            // 
             // sDate
             // 
             this.sDate.AutoSize = true;
@@ -250,21 +292,12 @@
             this.sDate.TabIndex = 8;
             this.sDate.Text = "start date";
             // 
-            // eDateBox
-            // 
-            this.eDateBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.eDateBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eDateBox.Location = new System.Drawing.Point(472, 63);
-            this.eDateBox.Name = "eDateBox";
-            this.eDateBox.Size = new System.Drawing.Size(122, 30);
-            this.eDateBox.TabIndex = 10;
-            // 
             // eDate
             // 
             this.eDate.AutoSize = true;
             this.eDate.BackColor = System.Drawing.Color.Transparent;
             this.eDate.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eDate.Location = new System.Drawing.Point(468, 36);
+            this.eDate.Location = new System.Drawing.Point(313, 88);
             this.eDate.Name = "eDate";
             this.eDate.Size = new System.Drawing.Size(74, 24);
             this.eDate.TabIndex = 11;
@@ -275,7 +308,7 @@
             this.budget.AutoSize = true;
             this.budget.BackColor = System.Drawing.Color.Transparent;
             this.budget.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Italic);
-            this.budget.Location = new System.Drawing.Point(45, 99);
+            this.budget.Location = new System.Drawing.Point(44, 156);
             this.budget.Name = "budget";
             this.budget.Size = new System.Drawing.Size(92, 24);
             this.budget.TabIndex = 13;
@@ -285,21 +318,11 @@
             // 
             this.budgetBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.budgetBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.budgetBox.Location = new System.Drawing.Point(48, 127);
+            this.budgetBox.Location = new System.Drawing.Point(47, 184);
+            this.budgetBox.MaxLength = 20;
             this.budgetBox.Name = "budgetBox";
             this.budgetBox.Size = new System.Drawing.Size(94, 30);
             this.budgetBox.TabIndex = 12;
-            // 
-            // deleteButton
-            // 
-            this.deleteButton.BackColor = System.Drawing.Color.LightBlue;
-            this.deleteButton.Location = new System.Drawing.Point(420, 626);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(122, 44);
-            this.deleteButton.TabIndex = 26;
-            this.deleteButton.Text = "Delete project";
-            this.deleteButton.UseVisualStyleBackColor = false;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // projectReview
             // 
@@ -324,10 +347,8 @@
 
         private System.Windows.Forms.Label sDate;
         private System.Windows.Forms.Label idLabel;
-        private System.Windows.Forms.TextBox sDateBox;
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.Label eDate;
-        private System.Windows.Forms.TextBox eDateBox;
         private System.Windows.Forms.Label budget;
         private System.Windows.Forms.TextBox budgetBox;
         private System.Windows.Forms.Button editButton;
@@ -343,5 +364,9 @@
         private System.Windows.Forms.Label statuslabel1;
         private System.Windows.Forms.Label statuslabel3;
         private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.DateTimePicker eDateBox;
+        private System.Windows.Forms.DateTimePicker sDateBox;
+        private System.Windows.Forms.Label LeaderId;
+        private System.Windows.Forms.TextBox LeaderIdBox;
     }
 }

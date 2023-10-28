@@ -12,6 +12,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 using TaskManagement.Classes;
 using TaskManagment.classes;
 using TaskManagment.design;
+using TaskManagment.validation;
 
 namespace TaskManagment.forms
 {
@@ -29,13 +30,21 @@ namespace TaskManagment.forms
         }
         private void setUp()
         {
-            idBox.Text = project.Id.ToString();
+            idBox.Text = project.Id;
             idBox.ReadOnly = true;
-            sDateBox.Text = project.StartDate.ToString();
-            sDateBox.ReadOnly = true;
-            eDateBox.Text = project.EndDate.ToString();
-            eDateBox.ReadOnly = true;
+            LeaderIdBox.Text = project.Leader;
+            LeaderIdBox.ReadOnly = true;
+            sDateBox.Text = DateTime.Parse(project.StartDate).ToString();
+            sDateBox.Enabled = false;
+            eDateBox.Text = DateTime.Parse(project.EndDate).ToString();
+            eDateBox.Enabled = false;
             budgetBox.Text = project.Budget.ToString();
+            if(LeaderIdBox.Text != id)
+            {
+                editButton.Visible = false;
+                saveButton.Visible = false;
+                deleteButton.Visible = false;
+            }
             budgetBox.ReadOnly = true;
             saveButton.Enabled = false;
 
@@ -117,10 +126,11 @@ namespace TaskManagment.forms
             double budgetPrecentage = 0;
             if (budgetused + budgetLeft != 0) { budgetPrecentage = budgetused / (budgetused + budgetLeft); }
 
-            double daysGoneBy = (DateTime.Today - StringToDate(project.StartDate)).Days;
-            double allDays = (StringToDate(project.EndDate) - StringToDate(project.StartDate)).Days;
+            double daysGoneBy = (DateTime.Today - DateTime.Parse(project.StartDate)).Days;
+            double allDays = (DateTime.Parse(project.EndDate) - DateTime.Parse(project.StartDate)).Days;
 
             double daysPrecentage = daysGoneBy / allDays;
+            if(daysPrecentage < 0) { daysPrecentage = 0; }
             statusLabel2.Text = ((int)(100 * taskPrecentage)).ToString() + "% of task/s has been complited out of " + (completedTasks + uncompletedTasks).ToString() + " task/s";
             statuslabel1.Text = ((int)(100 * budgetPrecentage)).ToString() + "% of budget has been used out of " + (project.Budget).ToString() + "$";
             statuslabel3.Text = ((int)(100 * daysPrecentage)).ToString() + "% of days has been used out of " + allDays.ToString() + " days";
@@ -146,8 +156,8 @@ namespace TaskManagment.forms
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            sDateBox.ReadOnly = !sDateBox.ReadOnly;
-            eDateBox.ReadOnly = !eDateBox.ReadOnly;
+            sDateBox.Enabled = !sDateBox.Enabled;
+            eDateBox.Enabled = !eDateBox.Enabled;
             budgetBox.ReadOnly = !budgetBox.ReadOnly;
             saveButton.Enabled = !saveButton.Enabled;
             if (editButton.Text.ToString() == "edit")
@@ -163,11 +173,27 @@ namespace TaskManagment.forms
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            if (budgetBox.Text.Length < 1)
+            {
+                MessageBox.Show("Make sure that you filled your budget");
+                return;
+            }
+            Validation val = new Validation();
+            if (!val.isNumber(budgetBox.Text))
+            {
+                MessageBox.Show("Make sure that your budget contains only digits");
+                return;
+            }
+            if (DateTime.Parse(sDateBox.Text.ToString()) >= DateTime.Parse(eDateBox.Text.ToString()))
+            {
+                MessageBox.Show("Make sure that your dates are logical");
+                return;
+            }
             DB dbHandler = DB.Instance;
-            string query1 = "DELETE FROM project WHERE id = '" + idBox.Text + "'";
-            string query2 = "INSERT INTO [project] ([id],[sDate],[eDate],[budget],[tid]) VALUES ('" + idBox.Text + "','" + sDateBox.Text + "','" + eDateBox.Text + "','" + budgetBox.Text + "','" + project.TeamId + "')";
-            dbHandler.UpdateDB(query1);
-            dbHandler.UpdateDB(query2);
+            string query = "UPDATE [project] " +
+                           "SET [sDate] = '" + sDateBox.Text + "', [eDate] = '" + eDateBox.Text + "', [budget] = '" + budgetBox.Text + "' " +
+                           "WHERE id = '" + idBox.Text + "'";
+            dbHandler.UpdateDB(query);
             project.StartDate = sDateBox.Text;
             project.EndDate = eDateBox.Text;
             project.Budget = double.Parse(budgetBox.Text);
@@ -209,13 +235,17 @@ namespace TaskManagment.forms
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            dbHandler.UpdateDB("DELETE FROM [project] WHERE id = '" + project.Id + "'");
-            this.Hide();
-            string query = @"
+            new myMessageBox("Are you sure you want to delete this project?\ndeliting this project you will delete all the tasks\n and reports that related to it", () =>
+            {
+                dbHandler.UpdateDB("DELETE FROM [project] WHERE id = '" + project.Id + "'");
+                projectReview.ActiveForm.Hide();
+                string query = @"
                 SELECT p.id
-                FROM [user] u, [team] t, [project] p
+                FROM [user] u, [userToTeam] t, [project] p
                 WHERE u.id = t.uid AND t.id = p.tid AND u.id = '" + id + "'";
-            homePage.GetInstance(id).updatehomePage(id, "My projects", query, "project");
+                homePage.GetInstance(id).updatehomePage(id, "My projects", query, "project");
+            }, () => myMessageBox.ActiveForm.Hide()).Show();
+
         }
     }
 }

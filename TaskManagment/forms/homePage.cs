@@ -28,13 +28,13 @@ namespace TaskManagment.forms
             putTitle("My Projects");
             string query = @"
                 SELECT p.id
-                FROM [user] u, [team] t, [project] p
+                FROM [user] u, [userToTeam] t, [project] p
                 WHERE u.id = t.uid AND t.id = p.tid AND u.id = '" + id + "'";
             Controls.Add(new myList(query, "project", (myId, currentTable) =>
             {
                 // Placeholder for handling project list
                 List<string> list = dbHandler.Query("SELECT * FROM " + currentTable + " WHERE id = '" + myId + "'").ToArray()[0];
-                new projectReview(new Project(list.ToArray()[0], list.ToArray()[1], list.ToArray()[2], double.Parse(list.ToArray()[3]), list.ToArray()[4]),id).Show();
+                new projectReview(new Project(list.ToArray()[0], list.ToArray()[1], list.ToArray()[2], double.Parse(list.ToArray()[3]), list.ToArray()[4], list.ToArray()[5]),id).Show();
             }));
         }
 
@@ -75,7 +75,7 @@ namespace TaskManagment.forms
             {
                 // Placeholder for handling reports
                 addReportButton();
-                string reportQuery = "SELECT id AS [Report ID], pId AS [Project ID], taskId AS [Task ID], hours AS [Hours], date AS [Date] FROM [report] WHERE uId = '" + id + "'";
+                string reportQuery = "SELECT id AS [Report ID], pId AS [Project ID], taskId AS [Task ID],  hours AS [Hours], reportDate AS [Date] FROM [report] WHERE uId = '" + id + "'";
                 taskGrid grid = new taskGrid(reportQuery);
                 grid.Width = 543;
                 grid.Location = new System.Drawing.Point(430, 150);
@@ -88,11 +88,11 @@ namespace TaskManagment.forms
                 Controls.Add(new myList(query, table, (myId, currentTable) =>
                 {
                     List<string> list = dbHandler.Query("SELECT * FROM " + currentTable + " WHERE id = '" + myId + "'").ToArray()[0];
-                    new projectReview(new Project(list.ToArray()[0], list.ToArray()[1], list.ToArray()[2], double.Parse(list.ToArray()[3]), list.ToArray()[4]),id).Show();
+                    new projectReview(new Project(list.ToArray()[0], list.ToArray()[1], list.ToArray()[2], double.Parse(list.ToArray()[3]), list.ToArray()[4], list.ToArray()[5]),id).Show();
                     // You can display or handle the project in your UI here
                 }));
             }
-            else if (table == "team")
+            else if (table == "userToTeam")
             {
                 addTeamButton();
                 // Placeholder for handling teams
@@ -218,7 +218,7 @@ namespace TaskManagment.forms
                 if (filterComboBox.SelectedItem.ToString() == "Project ID")
                 {
                     foreach (List<string> item in dbHandler.Query("SELECT * " +
-                        "FROM [project] p, [team] t " +
+                        "FROM [project] p, [userToTeam] t " +
                         "WHERE p.tid = t.id AND t.uId = '" + id + "'"))
                     {
                         filterTypeComboBox.Items.Add(item[0]);
@@ -226,7 +226,7 @@ namespace TaskManagment.forms
                 }
                 else if (filterComboBox.SelectedItem.ToString() == "Team ID")
                 {
-                    foreach (List<string> item in dbHandler.Query("SELECT * FROM [team] WHERE uId = '" + id + "'"))
+                    foreach (List<string> item in dbHandler.Query("SELECT * FROM [userToTeam] WHERE uId = '" + id + "'"))
                     {
                         filterTypeComboBox.Items.Add(item[0]);
                     }
@@ -249,21 +249,21 @@ namespace TaskManagment.forms
             if (filterComboBox.SelectedItem == null || filterComboBox.SelectedItem.ToString() == "No filter" || filterTypeComboBox.SelectedItem.ToString() == "All")
             {
                 taskQuery = @"SELECT t1.id AS [Task ID], t1.description AS Description, t1.pid AS [Project ID], t1.tid AS [Team ID], t1.status AS [Status] " +
-                    "FROM [task] t1, [team] t2 " +
+                    "FROM [task] t1, [userToTeam] t2 " +
                     "WHERE t2.uid = '" + id + "' AND t2.id = t1.tid";
                 homePage.GetInstance(id).updatehomePage(id, "My tasks", taskQuery, "task");
             }
             else if (filterComboBox.SelectedItem.ToString() == "Team ID")
             {
                 taskQuery = @"SELECT t1.id AS [Task ID], t1.description AS Description, t1.pid AS [Project ID], t1.tid AS [Team ID], t1.status AS [Status] " +
-                   "FROM [task] t1, [team] t2 " +
+                   "FROM [task] t1, [userToTeam] t2 " +
                    "WHERE t2.uid = '" + id + "' AND t2.id = t1.tid AND t1.tid = '" + filterTypeComboBox.SelectedItem.ToString() + "'";
                 homePage.GetInstance(id).updatehomePage(id, "My tasks", taskQuery, "task");
             }
             else if (filterComboBox.SelectedItem.ToString() == "Project ID")
             {
                 taskQuery = @"SELECT t1.id AS [Task ID], t1.description AS Description, t1.pid AS [Project ID], t1.tid AS [Team ID], t1.status AS [Status] " +
-                    "FROM [task] t1, [team] t2 " +
+                    "FROM [task] t1, [userToTeam] t2 " +
                     "WHERE t2.uid = '" + id + "' AND t2.id = t1.tid AND t1.pid = '" + filterTypeComboBox.SelectedItem.ToString() + "'";
                 homePage.GetInstance(id).updatehomePage(id, "My tasks", taskQuery, "task");
             }

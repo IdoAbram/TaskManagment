@@ -94,6 +94,7 @@
             // 
             this.hourstextBox.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.hourstextBox.Location = new System.Drawing.Point(50, 213);
+            this.hourstextBox.MaxLength = 20;
             this.hourstextBox.Name = "hourstextBox";
             this.hourstextBox.Size = new System.Drawing.Size(243, 39);
             this.hourstextBox.TabIndex = 27;
@@ -112,6 +113,7 @@
             // 
             this.reporttextBox.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.reporttextBox.Location = new System.Drawing.Point(50, 88);
+            this.reporttextBox.MaxLength = 50;
             this.reporttextBox.Name = "reporttextBox";
             this.reporttextBox.Size = new System.Drawing.Size(243, 39);
             this.reporttextBox.TabIndex = 24;
@@ -120,7 +122,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label1.Location = new System.Drawing.Point(45, 59);
+            this.label1.Location = new System.Drawing.Point(35, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(271, 26);
             this.label1.TabIndex = 22;
@@ -165,7 +167,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(328, 496);
+            this.ClientSize = new System.Drawing.Size(340, 496);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TaskComboBox);
             this.Controls.Add(this.label6);

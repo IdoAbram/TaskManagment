@@ -147,6 +147,7 @@
             // 
             this.hourRateBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hourRateBox.Location = new System.Drawing.Point(56, 447);
+            this.hourRateBox.MaxLength = 20;
             this.hourRateBox.Name = "hourRateBox";
             this.hourRateBox.Size = new System.Drawing.Size(245, 22);
             this.hourRateBox.TabIndex = 22;
@@ -188,6 +189,7 @@
             // 
             this.fNameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.fNameBox.Location = new System.Drawing.Point(56, 345);
+            this.fNameBox.MaxLength = 20;
             this.fNameBox.Name = "fNameBox";
             this.fNameBox.Size = new System.Drawing.Size(245, 22);
             this.fNameBox.TabIndex = 17;
@@ -196,6 +198,7 @@
             // 
             this.nameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nameBox.Location = new System.Drawing.Point(56, 295);
+            this.nameBox.MaxLength = 20;
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(245, 22);
             this.nameBox.TabIndex = 16;
@@ -215,6 +218,7 @@
             // 
             this.companyBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.companyBox.Location = new System.Drawing.Point(56, 245);
+            this.companyBox.MaxLength = 20;
             this.companyBox.Name = "companyBox";
             this.companyBox.Size = new System.Drawing.Size(245, 22);
             this.companyBox.TabIndex = 12;
@@ -296,6 +300,7 @@
             // 
             this.passwordBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.passwordBox.Location = new System.Drawing.Point(56, 195);
+            this.passwordBox.MaxLength = 20;
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(245, 22);
             this.passwordBox.TabIndex = 2;
@@ -304,6 +309,7 @@
             // 
             this.idBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.idBox.Location = new System.Drawing.Point(56, 145);
+            this.idBox.MaxLength = 20;
             this.idBox.Name = "idBox";
             this.idBox.Size = new System.Drawing.Size(245, 22);
             this.idBox.TabIndex = 1;

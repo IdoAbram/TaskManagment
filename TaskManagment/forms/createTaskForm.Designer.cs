@@ -71,6 +71,7 @@
             // 
             this.DescriptiontextBox.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.DescriptiontextBox.Location = new System.Drawing.Point(72, 213);
+            this.DescriptiontextBox.MaxLength = 1000;
             this.DescriptiontextBox.Multiline = true;
             this.DescriptiontextBox.Name = "DescriptiontextBox";
             this.DescriptiontextBox.Size = new System.Drawing.Size(243, 85);
@@ -90,6 +91,7 @@
             // 
             this.tasktextBox.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.tasktextBox.Location = new System.Drawing.Point(72, 124);
+            this.tasktextBox.MaxLength = 20;
             this.tasktextBox.Name = "tasktextBox";
             this.tasktextBox.Size = new System.Drawing.Size(243, 39);
             this.tasktextBox.TabIndex = 38;
@@ -137,6 +139,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "createTaskForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "createTaskForm";
             this.ResumeLayout(false);
             this.PerformLayout();

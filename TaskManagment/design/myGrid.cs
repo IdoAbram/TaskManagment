@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using TaskManagment.classes;
 using System.Drawing;
 using System.Collections.Generic;
+using TaskManagment.validation;
 
 public class taskGrid : DataGridView
 {
@@ -51,38 +52,75 @@ public class taskGrid : DataGridView
         }
         dB.Connection.Open();
 
+
+        // Iterate through the columns and find the one with the header name "Task ID"
+        foreach (DataColumn column in dataTable.Columns)
+        {
+            if (column.ColumnName == "Task ID")
+            {
+                column.ReadOnly = true; // Make the "Task ID" column read-only
+                break; // Exit the loop since we found the column
+            }
+        }
+
         this.DataSource = dataTable;
+
     }
     private void SaveButton_Click(object sender, EventArgs e)
     {
         // Create a DataTable to hold the changes
+        Validation val = new Validation();
         DataTable changes = ((DataTable)this.DataSource).GetChanges();
 
         if (changes != null)
         {
-            dB.Connection.Close();
-            using (OleDbConnection connection = new OleDbConnection(connectionString))
+            try
             {
-                connection.Open();
-                using (OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection))
+                foreach (DataRow row in changes.Rows)
                 {
-                    // Configure the DataAdapter to perform updates
-                    using (OleDbCommandBuilder builder = new OleDbCommandBuilder(adapter))
-                    {
-                        adapter.UpdateCommand = builder.GetUpdateCommand();
-                        adapter.InsertCommand = builder.GetInsertCommand();
-                        adapter.DeleteCommand = builder.GetDeleteCommand();
-
-                        // Update the database with changes
-                        adapter.Update(changes);
-                    }
+                    if (row.Table.Columns.Contains("Hours"))
+                        if (!val.isNumber(row["Hours"].ToString()))
+                            throw new Exception("Make sure that the hours represent by digits");
+                    if (row.Table.Columns.Contains("Date"))
+                        if (!val.isValidDate(row["Date"].ToString()))
+                            throw new Exception("Illegal Date");
                 }
-                connection.Close();
+                try
+                {
+                    dB.Connection.Close();
+                    using (OleDbConnection connection = new OleDbConnection(connectionString))
+                    {
+                        connection.Open();
+                        using (OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection))
+                        {
+                            // Configure the DataAdapter to perform updates
+                            using (OleDbCommandBuilder builder = new OleDbCommandBuilder(adapter))
+                            {
+                                adapter.UpdateCommand = builder.GetUpdateCommand();
+                                adapter.InsertCommand = builder.GetInsertCommand();
+                                adapter.DeleteCommand = builder.GetDeleteCommand();
+
+                                // Update the database with changes
+                                adapter.Update(changes);
+                            }
+                        }
+                        connection.Close();
+                    }
+                    dB.Connection.Open();
+                    // Accept changes to reflect updates in the DataTable
+                    ((DataTable)this.DataSource).AcceptChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Illegal data has been entered");
+                    LoadData();
+                }
             }
-            dB.Connection.Open();
-            // Accept changes to reflect updates in the DataTable
-            ((DataTable)this.DataSource).AcceptChanges();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                LoadData();
+            }
         }
     }
-
 }

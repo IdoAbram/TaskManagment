@@ -173,6 +173,7 @@ namespace TaskManagment
             this.passwordBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.passwordBox.Font = new System.Drawing.Font("MS Outlook", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.passwordBox.Location = new System.Drawing.Point(51, 197);
+            this.passwordBox.MaxLength = 20;
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(245, 21);
             this.passwordBox.TabIndex = 2;
@@ -182,6 +183,7 @@ namespace TaskManagment
             this.idBox.BackColor = System.Drawing.Color.White;
             this.idBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.idBox.Location = new System.Drawing.Point(52, 143);
+            this.idBox.MaxLength = 20;
             this.idBox.Name = "idBox";
             this.idBox.Size = new System.Drawing.Size(245, 22);
             this.idBox.TabIndex = 1;

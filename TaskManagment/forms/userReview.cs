@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using TaskManagement.Classes;
 using TaskManagment.classes;
 using TaskManagment.design;
+using TaskManagment.validation;
 
 namespace TaskManagment.forms
 {
@@ -63,6 +64,35 @@ namespace TaskManagment.forms
 
         private void saveButton_Click_1(object sender, EventArgs e)
         {
+            if (companyBox.Text.Length < 1 || nameBox.Text.Length < 1 || fNameBox.Text.Length < 1 || hourRateBox.Text.Length < 1)
+            {
+                MessageBox.Show("Make sure that you filled all the categories");
+                return;
+            }
+
+            if (idBox.Text.Length != 9)
+            {
+                MessageBox.Show("Make sure that your id is 9 letters");
+                return;
+            }
+            Validation val = new Validation();
+            if (passwordBox.Text.Length < 8)
+            {
+                MessageBox.Show("Make sure that your password is at list 8 letters");
+                return;
+            }
+
+            if (!val.isletters(nameBox.Text) || !val.isletters(fNameBox.Text))
+            {
+                MessageBox.Show("Make sure that your name and your suraname contains only letters");
+                return;
+            }
+
+            if (!val.isNumber(hourRateBox.Text))
+            {
+                MessageBox.Show("Make sure that your hour rate contains only digits");
+                return;
+            }
             if (!jobDescriptionBox.Items.Contains(jobDescriptionBox.Text))
             {
                 MessageBox.Show("Choose job description from the list");

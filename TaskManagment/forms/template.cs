@@ -51,7 +51,7 @@ namespace TaskManagment.forms
             homePage = homePage.GetInstance(id);
             string query = @"
                 SELECT p.id
-                FROM [user] u, [team] t, [project] p
+                FROM [user] u, [userToTeam] t, [project] p
                 WHERE u.id = t.uid AND t.id = p.tid AND u.id = '" + id + "'";
             homePage.updatehomePage(id,"My projects",query, "project");
         }
@@ -60,7 +60,7 @@ namespace TaskManagment.forms
         {
             homePage = homePage.GetInstance(id);
             string query = "SELECT t1.id AS [Task ID], t1.description AS Description, t1.pid AS [Project ID], t1.tid AS [Team ID], t1.status AS [Status] " +
-                    "FROM [task] t1, [team] t2, [user] u " +
+                    "FROM [task] t1, [userToTeam] t2, [user] u " +
                     "WHERE u.id = '" + id + "' AND u.id = t2.uid AND t2.id = t1.tid";
             homePage.updatehomePage(id, "My tasks", query, "task");
         }
@@ -70,9 +70,9 @@ namespace TaskManagment.forms
             homePage = homePage.GetInstance(id);
             string query = @"
                 SELECT t.id
-                FROM [user] u, [team] t
+                FROM [user] u, [userToTeam] t
                 WHERE u.id = t.uid AND u.id = '" + id + "'";
-            homePage.updatehomePage(id, "My teams", query, "team");
+            homePage.updatehomePage(id, "My teams", query, "userToTeam");
         }
 
         private void report_Click(object sender, EventArgs e)

@@ -30,11 +30,16 @@
         {
             this.title = new System.Windows.Forms.Label();
             this.Panel1 = new TaskManagment.design.RoundedPanel();
+            this.removebutton = new System.Windows.Forms.Button();
+            this.removeUsertextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.removeMemberbutton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.addUserTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.saveButton = new System.Windows.Forms.Button();
-            this.deleteButton = new System.Windows.Forms.Button();
+            this.saveMemberButton = new System.Windows.Forms.Button();
+            this.leaveTeambutton = new System.Windows.Forms.Button();
             this.Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,21 +56,80 @@
             // Panel1
             // 
             this.Panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Panel1.Controls.Add(this.leaveTeambutton);
+            this.Panel1.Controls.Add(this.removebutton);
+            this.Panel1.Controls.Add(this.removeUsertextBox);
+            this.Panel1.Controls.Add(this.label2);
+            this.Panel1.Controls.Add(this.removeMemberbutton);
             this.Panel1.Controls.Add(this.deleteButton);
             this.Panel1.Controls.Add(this.button1);
             this.Panel1.Controls.Add(this.addUserTextBox);
             this.Panel1.Controls.Add(this.label1);
-            this.Panel1.Controls.Add(this.saveButton);
+            this.Panel1.Controls.Add(this.saveMemberButton);
             this.Panel1.CornerRadius = 30;
             this.Panel1.Location = new System.Drawing.Point(138, 201);
             this.Panel1.Name = "Panel1";
             this.Panel1.Size = new System.Drawing.Size(1108, 558);
             this.Panel1.TabIndex = 11;
             // 
+            // removebutton
+            // 
+            this.removebutton.BackColor = System.Drawing.Color.LightBlue;
+            this.removebutton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.removebutton.Location = new System.Drawing.Point(22, 439);
+            this.removebutton.Name = "removebutton";
+            this.removebutton.Size = new System.Drawing.Size(182, 44);
+            this.removebutton.TabIndex = 31;
+            this.removebutton.Text = "Remove member";
+            this.removebutton.UseVisualStyleBackColor = false;
+            this.removebutton.Click += new System.EventHandler(this.removebutton_Click);
+            // 
+            // removeUsertextBox
+            // 
+            this.removeUsertextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.removeUsertextBox.Location = new System.Drawing.Point(225, 447);
+            this.removeUsertextBox.Name = "removeUsertextBox";
+            this.removeUsertextBox.Size = new System.Drawing.Size(148, 30);
+            this.removeUsertextBox.TabIndex = 30;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label2.Location = new System.Drawing.Point(221, 420);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(181, 24);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "Remove user by ID";
+            // 
+            // removeMemberbutton
+            // 
+            this.removeMemberbutton.BackColor = System.Drawing.Color.LightBlue;
+            this.removeMemberbutton.Font = new System.Drawing.Font("Arial", 12F);
+            this.removeMemberbutton.Location = new System.Drawing.Point(408, 439);
+            this.removeMemberbutton.Name = "removeMemberbutton";
+            this.removeMemberbutton.Size = new System.Drawing.Size(154, 44);
+            this.removeMemberbutton.TabIndex = 28;
+            this.removeMemberbutton.Text = "Remove";
+            this.removeMemberbutton.UseVisualStyleBackColor = false;
+            this.removeMemberbutton.Click += new System.EventHandler(this.removeMemberbutton_Click);
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.BackColor = System.Drawing.Color.LightBlue;
+            this.deleteButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.deleteButton.Location = new System.Drawing.Point(22, 370);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(182, 44);
+            this.deleteButton.TabIndex = 27;
+            this.deleteButton.Text = "Delete team";
+            this.deleteButton.UseVisualStyleBackColor = false;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.LightBlue;
-            this.button1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.button1.Location = new System.Drawing.Point(22, 505);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(182, 44);
@@ -92,29 +156,29 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Add user by ID";
             // 
-            // saveButton
+            // saveMemberButton
             // 
-            this.saveButton.BackColor = System.Drawing.Color.LightBlue;
-            this.saveButton.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.saveButton.Location = new System.Drawing.Point(390, 505);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(154, 44);
-            this.saveButton.TabIndex = 23;
-            this.saveButton.Text = "Save";
-            this.saveButton.UseVisualStyleBackColor = false;
-            this.saveButton.Click += new System.EventHandler(this.AddButton_Click);
+            this.saveMemberButton.BackColor = System.Drawing.Color.LightBlue;
+            this.saveMemberButton.Font = new System.Drawing.Font("Arial", 12F);
+            this.saveMemberButton.Location = new System.Drawing.Point(408, 505);
+            this.saveMemberButton.Name = "saveMemberButton";
+            this.saveMemberButton.Size = new System.Drawing.Size(154, 44);
+            this.saveMemberButton.TabIndex = 23;
+            this.saveMemberButton.Text = "Save";
+            this.saveMemberButton.UseVisualStyleBackColor = false;
+            this.saveMemberButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
-            // deleteButton
+            // leaveTeambutton
             // 
-            this.deleteButton.BackColor = System.Drawing.Color.LightBlue;
-            this.deleteButton.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.deleteButton.Location = new System.Drawing.Point(22, 455);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(182, 44);
-            this.deleteButton.TabIndex = 27;
-            this.deleteButton.Text = "Delete team";
-            this.deleteButton.UseVisualStyleBackColor = false;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            this.leaveTeambutton.BackColor = System.Drawing.Color.LightBlue;
+            this.leaveTeambutton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.leaveTeambutton.Location = new System.Drawing.Point(22, 505);
+            this.leaveTeambutton.Name = "leaveTeambutton";
+            this.leaveTeambutton.Size = new System.Drawing.Size(182, 44);
+            this.leaveTeambutton.TabIndex = 32;
+            this.leaveTeambutton.Text = "Leave team";
+            this.leaveTeambutton.UseVisualStyleBackColor = false;
+            this.leaveTeambutton.Click += new System.EventHandler(this.leaveTeambutton_Click);
             // 
             // teamReview
             // 
@@ -137,10 +201,15 @@
 
         private System.Windows.Forms.Label title;
         private design.RoundedPanel Panel1;
-        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button saveMemberButton;
         private System.Windows.Forms.TextBox addUserTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Button removebutton;
+        private System.Windows.Forms.TextBox removeUsertextBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button removeMemberbutton;
+        private System.Windows.Forms.Button leaveTeambutton;
     }
 }
